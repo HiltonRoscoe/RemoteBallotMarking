@@ -60,7 +60,7 @@ When the PDF is loaded, the following occurs:
 
 ## Customizing Layout
 
-The default stylesheet included with the ballot template can be overridden, with exceptions. See the [EML 410 Extensions document](./EML-410_extensions.md#styling-support)
+The default stylesheet included with the ballot template can be overridden, with exceptions. See the [EML 410 Extensions document](./EML-410_extensions.md#styling-support).
 
 ### Customizing Contests
 

@@ -65,7 +65,7 @@ The RBM is not designed to be a complete, turn key solution. The following featu
   - [RBM Internals](./docs/INTERNALS.md)
 - Ballot Definition
   - [Common Tasks](./docs/TASKS.md)
-  - [Localization and Customization](./doc/LOCALIZATION.md)
+  - [Localization and Customization](./docs/LOCALIZATION.md)
   - [EML Extensions](./docs/EML-410_extensions.md)
   - Barcode Support
   - RCV Support
