@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xfa generator="Designer_V6.1.0.20150517.1.919161" APIVersion="3.6.15103.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2018-04-01T21:33:01Z" uuid="50794ed8-32e5-4eae-b332-6ef70ce417dd">
-<template xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.1.20160728.2.925958" APIVersion="3.6.16210.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-08-10T20:47:23Z" uuid="256d05c8-1774-44ab-a702-4ffb7b400450">
+<template xmlns:xliff="urn:oasis:names:tc:xliff:document:1.1" xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
    <?formServer defaultPDFRenderFormat acrobat10.0dynamic?>
    <?formServer allowRenderCaching 0?>
    <?formServer formModel client?>
@@ -17,7 +17,7 @@
                   <textEdit/>
                </ui>
                <value>
-                  <exData contentType="text/html">
+                  <exData contentType="text/html" xliff:rid="AEF59AD6-4B3B-44C9-8D7D-4CE139862C39">
                      <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="font-family:'Myriad Pro'">OFFICIAL GENERAL ELECTION BALLOT</p></body>
                   </exData>
                </value>
@@ -31,7 +31,7 @@
                   <textEdit/>
                </ui>
                <value>
-                  <text> TEST BALLOT</text>
+                  <text xliff:rid="5211DE5E-A1B3-4BA9-9ADC-95319CCEE02D"> TEST BALLOT</text>
                </value>
                <font typeface="Myriad Pro"/>
                <?renderCache.bounds 83017 14834 0 0 0 0 0 0?>
@@ -126,7 +126,7 @@ else {
                   <textEdit/>
                </ui>
                <value>
-                  <exData contentType="text/html">
+                  <exData contentType="text/html" xliff:rid="7EEDFC35-4EBC-47E7-BCA3-C6BC9C8F53EC">
                      <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="letter-spacing:0in">Page<span style="xfa-spacerun:yes"> </span><span xfa:embedType="uri" xfa:embedMode="raw" xfa:embed="#floatingField013941"/> of<span style="xfa-spacerun:yes"> </span><span xfa:embedType="uri" xfa:embedMode="raw" xfa:embed="#floatingField020775"/></p><p style="letter-spacing:0in"><span xfa:embedType="uri" xfa:embedMode="raw" xfa:embed="#floatingField003686"/></p></body>
                   </exData>
                </value>
@@ -333,7 +333,8 @@ else {
                <draw minH="0.204in" name="T74" w="7.48in" x="6.807mm" y="299.973mm">
                   <font typeface="Times New Roman" size="11pt" weight="bold" posture="normal"/>
                </draw>
-               <?templateDesigner expand 0?></subform>
+               <?templateDesigner expand 0?>
+            </subform>
             <?templateDesigner expand 0?></pageArea>
          <?templateDesigner expand 1?></pageSet>
       <subform w="57.423mm" layout="tb">
@@ -344,7 +345,7 @@ else {
                   <textEdit/>
                </ui>
                <value>
-                  <exData contentType="text/html">
+                  <exData contentType="text/html" xliff:rid="5F4835DC-BE0B-431A-8D3A-66B0DABD9FE6">
                      <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="letter-spacing:0in">Precinct<span style="xfa-spacerun:yes"> </span><span style="font-style:italic"><span xfa:embedType="uri" xfa:embedMode="raw" xfa:embed="#floatingField026283"/></span></p></body>
                   </exData>
                </value>
@@ -355,7 +356,7 @@ else {
                <textEdit/>
             </ui>
             <value>
-               <exData contentType="text/html">
+               <exData contentType="text/html" xliff:rid="E690ACB9-60B5-4E97-AB7E-7BAE168CBEBC">
                   <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="font-weight:bold;text-decoration:none;letter-spacing:0in">Instructions to Voter</p><p style="text-decoration:none;letter-spacing:0in"><br/>•<span style="xfa-spacerun:yes"> </span><span style="font-weight:bold">To vote:<span style="xfa-spacerun:yes"> </span></span>completely darken the oval to the left of your choice.<br/><br/></p><p style="text-decoration:none;letter-spacing:0in">• Note the permitted number of choices directly below the title of<br/>each candidate office.</p><p style="text-decoration:none;letter-spacing:0in"><br/>•<span style="xfa-spacerun:yes"> </span><span style="font-weight:bold">To vote for a write-in candidate:</span><br/>completely darken the oval<span style="xfa-spacerun:yes">  </span>to the left of the blank line and write in the candidate's name. Only votes cast for candidates who filed as write-in candidates can be counted.<span style="xfa-spacerun:yes"> </span></p><p style="text-decoration:none;letter-spacing:0in"><span style="xfa-spacerun:yes"> </span></p><p style="text-decoration:none;letter-spacing:0in">• Do not write in a candidate's name if that person's name already is printed on the ballot for that same contest.<br/><br/></p></body>
                </exData>
             </value>
@@ -411,7 +412,7 @@ else {
                               <textEdit/>
                            </ui>
                            <value>
-                              <exData contentType="text/html">
+                              <exData contentType="text/html" xliff:rid="5C901DF8-AFF4-40FB-9BB4-FDEEFEF4B3C4">
                                  <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="letter-spacing:0in;font-weight: bold;"><span xfa:embedType="uri" xfa:embedMode="formatted" xfa:embed="#floatingField020119"/></p><p style="font-size:8pt;letter-spacing:0in;font-weight: bold;">(Vote for not more than<span style="xfa-spacerun:yes"> </span><span xfa:embedType="uri" xfa:embedMode="raw" xfa:embed="#floatingField027461"/>)</p></body>
                               </exData>
                            </value>
@@ -589,7 +590,7 @@ else {
                                  </value>
                               </caption>
                               <items>
-                                 <text>true</text>
+                                 <text xliff:rid="3E1A5C88-8274-4984-87D5-2D34D4F47F0C">true</text>
                                  <text/>
                               </items>
                               <event activity="initialize" name="event__initialize">
@@ -697,7 +698,7 @@ SelectionManager.makeExclusive(this);
                                  <para vAlign="middle"/>
                                  <bind match="dataRef" ref="$.Name"/>
                                  <assist>
-                                    <toolTip>Write-In Candidate Name</toolTip>
+                                    <toolTip xliff:rid="EBA0CF0A-6E49-44A5-96D9-F32EB47196D2">Write-In Candidate Name</toolTip>
                                  </assist>
                                  <value>
                                     <text maxChars="255"/>
@@ -729,14 +730,14 @@ SelectionManager.mostRecentlyCheckedSOM = this.resolveNode("WriteIn").somExpress
                                  <font typeface="Myriad Pro"/>
                                  <para vAlign="middle"/>
                                  <items>
-                                    <text>true</text>
+                                    <text xliff:rid="DAA64F20-21D8-446F-8CDB-853DA9090E1F">true</text>
                                     <text/>
                                  </items>
                                  <margin leftInset="2.032mm" rightInset="0mm"/>
                                  <bind match="dataRef" ref="$.Selected"/>
                                  <assist>
-                                    <toolTip>Write-In</toolTip>
-                                    <speak>Write-In</speak>
+                                    <toolTip xliff:rid="4C29D758-65FD-4B54-8D6F-7CD6ED62AE5E">Write-In</toolTip>
+                                    <speak xliff:rid="3656EE6C-118A-4B4D-8C3F-1BA6FF18CF89">Write-In</speak>
                                  </assist>
                                  <event activity="mouseDown" name="event__mouseDown">
                                     <script contentType="application/x-javascript">/**
@@ -904,11 +905,11 @@ XFAUtil.initExtents(xfa);
    <?templateDesigner DefaultCaptionFontSettings face:Myriad Pro;size:10;weight:normal;style:normal?>
    <?templateDesigner DefaultValueFontSettings face:Myriad Pro;size:10;weight:normal;style:normal?>
    <?templateDesigner ValidationMessaging noMessages?>
-   <?templateDesigner FormTargetVersion 33?>
    <?templateDesigner SavePDFWithLog 0?>
-   <?templateDesigner Zoom 66?>
    <?templateDesigner SaveTaggedPDF 0?>
    <?templateDesigner SavePDFWithEmbeddedFonts 0?>
+   <?templateDesigner FormTargetVersion 33?>
+   <?templateDesigner Zoom 143?>
    <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
    <?templateDesigner Guidelines v:80100;v:411600;v:577600;v:245300;h:48600;h:61200;h:743300;h:756000?></template>
 <config xmlns="http://www.xfa.org/schema/xci/3.0/">
@@ -922,12 +923,13 @@ XFAUtil.initExtents(xfa);
    </agent>
    <present>
       <!--  [0..n]  -->
+      <destination>pdf</destination>
       <pdf>
          <!--  [0..n]  -->
-         <tagged>0</tagged>
          <fontInfo>
             <embed>0</embed>
          </fontInfo>
+         <tagged>0</tagged>
          <version>1.7</version>
          <adobeExtensionLevel>8</adobeExtensionLevel>
       </pdf>
@@ -1835,12 +1837,18 @@ XFAUtil.initExtents(xfa);
 </connectionSet>
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.4-c005 78.150055, 2013/08/07-22:58:47        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:pdf="http://ns.adobe.com/pdf/1.3/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:desc="http://ns.adobe.com/xfa/promoted-desc/" rdf:about="">
-         <xmp:MetadataDate>2018-04-01T21:33:01Z</xmp:MetadataDate>
-         <xmp:CreatorTool>Designer 6.1</xmp:CreatorTool>
-         <pdf:Producer>Designer 6.1</pdf:Producer>
-         <xmpMM:DocumentID>uuid:50794ed8-32e5-4eae-b332-6ef70ce417dd</xmpMM:DocumentID>
+      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
+         <xmp:MetadataDate>2020-08-10T20:47:23Z</xmp:MetadataDate>
+         <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
+      </rdf:Description>
+      <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
+         <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
+      </rdf:Description>
+      <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
+         <xmpMM:DocumentID>uuid:256d05c8-1774-44ab-a702-4ffb7b400450</xmpMM:DocumentID>
          <xmpMM:InstanceID>uuid:7d8d5841-887a-4eea-a735-c9ad0c31c2bd</xmpMM:InstanceID>
+      </rdf:Description>
+      <rdf:Description xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
          <dc:format>application/pdf</dc:format>
          <dc:creator>
             <rdf:Seq>
@@ -1852,6 +1860,8 @@ XFAUtil.initExtents(xfa);
                <rdf:li xml:lang="x-default">Remote Ballot Marking with Review</rdf:li>
             </rdf:Alt>
          </dc:title>
+      </rdf:Description>
+      <rdf:Description xmlns:desc="http://ns.adobe.com/xfa/promoted-desc/" rdf:about="">
          <desc:version rdf:parseType="Resource">
             <rdf:value>11.0.1.20130826.2.901444.899636</rdf:value>
             <desc:ref>/template/subform[1]</desc:ref>

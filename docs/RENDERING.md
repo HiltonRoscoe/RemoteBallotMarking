@@ -57,7 +57,7 @@ If a column or page break is unavoidable, a subform can appear right before the 
 
 > A leader/trailer appear will only appear for the first break of any contest. Put differently, if a contest splits across more than two columns, a leader/trailer will appear one the first and second column.
 
-`RBM` adds directives that can control the emission of leaders and trailers (see [Leaders and Trailers](./EML-410_extensions.md#leaders-and-trailers)
+`RBM` adds directives that can control the emission of leaders and trailers (see [Leaders and Trailers](./EML-410_extensions.md#leaders-and-trailers))
 
 ![Contest with Leader and Trailer](./images/contest-leader-trailer.png)
 
