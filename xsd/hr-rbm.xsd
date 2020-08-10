@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2018 sp1 (x64) (http://www.altova.com) by John Dziurlaj (NIST) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="urn:oasis:names:tc:evs:schema:eml" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="urn:oasis:names:tc:evs:schema:eml" schemaLocation="410-ballots-v7-0.xsd"/>
+	<xs:element name="RBM">
+		<xs:annotation>
+			<xs:documentation>Root for ballot marker</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="ns1:EML"/>
+				<xs:element name="Selections" type="SelectionsType" minOccurs="0"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="SelectionsType">
+		<xs:sequence>
+			<xs:element name="Selection" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Selection on a ballot</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="SelectionCode" type="xs:string">
+							<xs:annotation>
+								<xs:documentation>Code representing the contest option position on the ballot.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="SelectionRaceCode" type="xs:string">
+							<xs:annotation>
+								<xs:documentation>Code representing the contest on the ballot.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Selected" type="xs:string">
+							<xs:annotation>
+								<xs:documentation>Empty if not selected, true if selected, a number if a rank</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="WriteInName" type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

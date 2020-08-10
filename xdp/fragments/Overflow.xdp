@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.1.20160728.2.925958" APIVersion="3.6.16210.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+<template xmlns:xliff="urn:oasis:names:tc:xliff:document:1.1" xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
+   <subform name="form1" locale="en_US" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea x="28.448mm" y="21.341mm" w="58.039mm" h="241.194mm" name="ColA"/>
+            <medium stock="letter" short="8.5in" long="11in"/>
+         </pageArea>
+      </pageSet>
+      <subform w="58.039mm" layout="tb" name="Overflow">
+         <subform w="58.039mm" name="overflowLeader" id="overflowLeader_ID">
+            <bind match="none"/>
+            <draw name="Text2" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.DefaultTextStyle)" x="0in" y="0in">
+               <ui>
+                  <textEdit/>
+               </ui>
+               <value>
+                  <text xliff:rid="168DC939-4915-49F3-BD3A-F82DD116040E">Continued from previous column</text>
+               </value>
+               <border>
+                  <edge presence="visible" stroke="solid"/>
+                  <fill presence="visible">
+                     <solid/>
+                     <color value="192,192,192"/>
+                  </fill>
+                  <edge presence="visible" stroke="solid"/>
+                  <edge presence="visible" stroke="solid"/>
+                  <edge presence="visible" stroke="solid"/>
+                  <corner presence="visible" stroke="solid" join="square" inverted="0" thickness="0.175mm" radius="0in">
+                     <color value="0,0,0"/>
+                  </corner>
+                  <corner presence="visible" stroke="solid" join="square" inverted="0" thickness="0.175mm" radius="0in">
+                     <color value="0,0,0"/>
+                  </corner>
+                  <corner presence="visible" stroke="solid" join="square" inverted="0" thickness="0.175mm" radius="0in">
+                     <color value="0,0,0"/>
+                  </corner>
+                  <corner presence="visible" stroke="solid" join="square" inverted="0" thickness="0.175mm" radius="0in">
+                     <color value="0,0,0"/>
+                  </corner>
+               </border>
+               <margin/>
+            </draw>
+            <margin bottomInset="0.5002mm"/>
+            <occur min="0" max="-1"/>
+            <?templateDesigner expand 1?>
+         </subform>
+         <subform name="overflowTrailer" id="overflowTrailer_ID" w="58.039mm">
+            <bind match="none"/>
+            <draw name="Text1" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.DefaultTextStyle)" x="0in" y="0in">
+               <ui>
+                  <textEdit/>
+               </ui>
+               <value>
+                  <text xliff:rid="CCFBB434-A43D-4A81-9FA3-609426758BFC">Continued on next column</text>
+               </value>
+               <border>
+                  <edge presence="visible" stroke="solid"/>
+                  <fill presence="visible">
+                     <solid/>
+                     <color value="192,192,192"/>
+                  </fill>
+                  <edge presence="visible" stroke="solid"/>
+                  <edge presence="visible" stroke="solid"/>
+                  <edge presence="visible" stroke="solid"/>
+                  <corner presence="visible" stroke="solid" join="square" inverted="0" thickness="0.175mm" radius="0in">
+                     <color value="0,0,0"/>
+                  </corner>
+                  <corner presence="visible" stroke="solid" join="square" inverted="0" thickness="0.175mm" radius="0in">
+                     <color value="0,0,0"/>
+                  </corner>
+                  <corner presence="visible" stroke="solid" join="square" inverted="0" thickness="0.175mm" radius="0in">
+                     <color value="0,0,0"/>
+                  </corner>
+                  <corner presence="visible" stroke="solid" join="square" inverted="0" thickness="0.175mm" radius="0in">
+                     <color value="0,0,0"/>
+                  </corner>
+               </border>
+            </draw>
+            <margin topInset="0.5002mm"/>
+            <occur min="0" max="-1"/>
+            <?templateDesigner expand 1?>
+         </subform>
+         <?templateDesigner expand 1?>
+         <?templateDesigner isFragment yes?>
+         <?templateDesigner fragmentTitle Overflow?>
+         <?templateDesigner fragmentDescription Fragment that contains the overflow leader and trailer.?>
+      </subform>
+      <proto>
+         <subform name="designer__stylesheet">
+            <draw name="DefaultTextStyle" w="58.039mm" minH="5.233mm">
+               <ui>
+                  <textEdit/>
+               </ui>
+               <font typeface="Myriad Pro"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.7056mm" rightInset="0.7056mm"/>
+               <border>
+                  <edge presence="hidden"/>
+               </border>
+            </draw>
+            <field name="FormattedFloatingField" w="62mm" h="9mm">
+               <ui>
+                  <textEdit>
+                     <border presence="hidden"/>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Myriad Pro" weight="bold"/>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para vAlign="middle"/>
+            </field>
+         </subform>
+      </proto>
+   </subform>
+   <?templateDesigner Stylesheet ..\stylesheets\RbmStyleSheet.xfs?></template>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.156067, 2014/03/04-12:38:26        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">Overflow</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">Fragment that contains the overflow leader and trailer.</rdf:li>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.Overflow</dc:identifier>
+                  <lcd:fragmentRole>Subform</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta></xdp:xdp>

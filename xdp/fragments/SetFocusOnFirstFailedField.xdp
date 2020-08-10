@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.1.20160728.2.925958" APIVersion="3.6.16210.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
+   <subform name="form1" locale="en_US" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea x="28.448mm" y="21.341mm" w="58.039mm" h="241.194mm" name="ColA"/>
+            <medium stock="letter" short="8.5in" long="11in"/>
+         </pageArea>
+      </pageSet>
+      <subform>
+         <variables>
+            <script name="SetFocusOnFirstFailedField" contentType="application/x-javascript">/** Version Control Object */
+var oVersionInfo = {
+    identifier:    "SetFocusOnFirstFailedField",
+    assetType:     "fragment",
+    description:   "Sets focus to first failed subform",
+    currentVersion: 1 
+};
+function DoSetFocusOnFirstFailedField(oRootSubform) {
+	if (xfa.host.name === "Acrobat") {	
+		var oInvalidNodes = oRootSubform.getInvalidObjects();	
+		var nCount = oInvalidNodes.length;	
+		if (nCount &gt; 0) {
+            var contestNode = oInvalidNodes.item(0).resolveNode("Contest");
+			XFAUtil.scrollTo(contestNode);
+		}		
+	}
+}
+
+               
+               
+               <?templateDesigner isFragment yes?>
+               <?templateDesigner fragmentTitle SetFocusOnFirstFailedField?>
+               <?templateDesigner fragmentDescription Script fragment to handle focusing on the first undervoted contest.?></script>
+         </variables>
+      </subform>
+   </subform>
+</template>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.4-c005 78.150055, 2013/08/07-22:58:47        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">SetFocusOnFirstFailedField</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">Script fragment to handle focusing on the first undervoted contest.</rdf:li>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.#subform.#variables.SetFocusOnFirstFailedField</dc:identifier>
+                  <lcd:fragmentRole>ScriptObject</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta></xdp:xdp>

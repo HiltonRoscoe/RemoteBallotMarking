@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.1.20160728.2.925958" APIVersion="3.6.16210.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2019-02-11T16:49:25Z" uuid="2e08751f-7cf6-4c8c-ad2c-4f124842417c">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
+   <?formServer defaultPDFRenderFormat acrobat10.0static?>
+   <subform name="form1" locale="en_US" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea x="28.448mm" y="21.341mm" w="58.039mm" h="241.194mm" name="ColA"/>
+            <medium stock="letter" short="8.5in" long="11in"/>
+            <?templateDesigner expand 1?></pageArea>
+         <?templateDesigner expand 1?></pageSet>
+      <subform w="57.423mm" layout="tb" name="Ballot">
+         <event activity="initialize" name="event__initialize">
+            <script contentType="application/x-javascript">/**
+* Provides handling based on form host
+* @reference ColorSubformsValidation script object
+*/ 
+ColorSubformsValidation.InitializeColorSubforms();
+</script>
+         </event>
+         <event activity="validationState" listen="refAndDescendents" name="event__validationState">
+            <script contentType="application/x-javascript">/**
+* Colors all the subforms containing a undervoted contest
+* @reference ColorSubformsValidation script object
+*/ 
+ColorSubformsValidation.DoColorSubforms(xfa.event.target);
+</script>
+         </event>
+         <event activity="docReady" ref="$host" name="event__docReady">
+            <script contentType="application/x-javascript">/**
+* Initializes the extents of the form objects
+* for easy reference
+* @reference XFAUtil script object
+*/ 
+//consider this a hack; it needs to be removed
+//before production. It keeps the validators
+//from firing prematurely, (pick more than one)
+//xfa.host.validationsEnabled = false;
+//XFAUtil.initExtents(xfa);
+</script>
+         </event>
+         <subform layout="tb" name="EInfo" id="EInfo_ID">
+            <bind match="none"/>
+            <draw name="ElectionInfo" usehref=".#som($template.#subform.designer__stylesheet.DefaultTextStyle)">
+               <ui>
+                  <textEdit/>
+               </ui>
+               <value>
+                  <exData contentType="text/html">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+                  <p style="letter-spacing:0in">Precinct<span style="xfa-spacerun:yes"> </span><span style="font-style:italic"><span xfa:embedType="uri" xfa:embedMode="raw" xfa:embed="#floatingField026283"/></span></p>
+                </body>
+                  </exData>
+               </value>
+            </draw>
+            <?templateDesigner expand 1?></subform>
+         <draw name="Instructions" usehref=".#som($template.#subform.designer__stylesheet.DefaultTextStyle)">
+            <ui>
+               <textEdit/>
+            </ui>
+            <value>
+               <exData contentType="text/html">
+                  <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+                <p style="font-weight:bold;text-decoration:none;letter-spacing:0in">Instructions to Voter</p>
+                <p style="text-decoration:none;letter-spacing:0in">
+                  <br/>•<span style="xfa-spacerun:yes"> </span><span style="font-weight:bold">To vote:<span style="xfa-spacerun:yes"> </span></span>completely darken the oval to the left of your choice.<br/><br/></p>
+                <p style="text-decoration:none;letter-spacing:0in">• Note the permitted number of choices directly below the title of<br/>each candidate office.</p>
+                <p style="text-decoration:none;letter-spacing:0in">
+                  <br/>•<span style="xfa-spacerun:yes"> </span><span style="font-weight:bold">To vote for a write-in candidate:</span><br/>completely darken the oval<span style="xfa-spacerun:yes">  </span>to the left of the blank line and write in the candidate's name. Only votes cast for candidates who filed as write-in candidates can be counted.<span style="xfa-spacerun:yes"> </span></p>
+                <p style="text-decoration:none;letter-spacing:0in">
+                  <span style="xfa-spacerun:yes"> </span>
+                </p>
+                <p style="text-decoration:none;letter-spacing:0in">• Do not write in a candidate's name if that person's name already is printed on the ballot for that same contest.<br/><br/></p>
+              </body>
+               </exData>
+            </value>
+         </draw>
+         <subform name="Ballot" layout="tb">
+            <bind match="none"/>
+            <field name="Name" id="floatingField026283" access="readOnly" presence="hidden" usehref=".#som($template.#subform.designer__stylesheet.FormattedFloatingField)">
+               <ui>
+                  <textEdit/>
+               </ui>
+               <bind match="dataRef" ref="$.BallotIdentifier.BallotName"/>
+            </field>
+            <subform name="Election" layout="tb">
+               <bind match="dataRef" ref="$.Election"/>
+               <subformSet relation="choice">
+                  <subform usehref=".\Contest.xdp#som($template.form1.Contest)">
+                     <?templateDesigner expand 0?></subform>
+                  <occur min="0" max="-1"/>
+                  <subform usehref=".\CCDRCVContest.xdp#som($template.form1.Contest)">
+                     <bind/>
+                     <breakBefore target="" targetType="auto" startNew="0"/>
+                     <keep previous="none"/>
+                     <?templateDesigner expand 0?></subform>
+                  <?templateDesigner EditByExpression true?>
+                  <?templateDesigner LastConnection DataConnection?>
+                  <?templateDesigner expand 1?></subformSet>
+               <?templateDesigner expand 1?></subform>
+            <traversal>
+               <traverse operation="first" ref="Election[0]"/>
+            </traversal>
+            <?templateDesigner expand 1?></subform>
+         <bind match="none"/>
+         <variables>
+            <script usehref=".\ColorSubformsValidation.xdp#som($template.form1.#subform.#variables.ColorSubformsValidation)"/>
+            <script usehref=".\SelectionManager.xdp#som($template.form1.#subform.#variables.SelectionManager)"/>
+            <?templateDesigner expand 1?></variables>
+         <?templateDesigner expand 1?>
+         <?templateDesigner isFragment yes?>
+         <?templateDesigner fragmentTitle Ballot?>
+         <?templateDesigner fragmentDescription Represents contentArea content (e.g. instructions, contests, etc.)?></subform>
+      <proto>
+         <subform name="designer__stylesheet">
+            <draw name="DefaultTextStyle" w="58.039mm" minH="5.233mm">
+               <ui>
+                  <textEdit/>
+               </ui>
+               <font typeface="Myriad Pro"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.7056mm" rightInset="0.7056mm"/>
+               <border>
+                  <edge presence="hidden"/>
+               </border>
+            </draw>
+            <field name="FormattedFloatingField" w="62mm" h="9mm">
+               <ui>
+                  <textEdit>
+                     <border presence="hidden"/>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Myriad Pro" weight="bold"/>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para vAlign="middle"/>
+            </field>
+         </subform>
+      </proto>
+      <?templateDesigner expand 1?>
+      <?renderCache.subset "Courier Std" 0 0 ISO-8859-1 4 52 13 0023003200450046004A004F0050005400550056005A005C005EBQdeinostuy{}?>
+      <?renderCache.subset "Myriad Pro" 0 0 ISO-8859-1 4 152 40 0001000E000F00250029002E002F003000310033003400360042004300440045004600470049004A004C004D004E004F005000510053005400550056005700580059005A005C005E00680074 -.DHMNOPRSUabcdefhiklmnoprstuvwxy{}'•?>
+      <?renderCache.subset "Myriad Pro" 1 0 ISO-8859-1 4 140 35 00010009000A000E001B0029002A002E002F00330034003500360037004200440045004600470049004A004D004E004F005000510053005400550056005700580059005C005E ()-:HIMNRSTUVacdefhilmnoprstuvwx{}?>
+      <?renderCache.subset "Myriad Pro" 0 1 ISO-8859-1 4 24 6 002F00420046004E005C005ENaem{}?></subform>
+   <?templateDesigner Stylesheet ..\stylesheets\RbmStyleSheet.xfs?>
+   <?templateDesigner Zoom 68?>
+   <?templateDesigner FormTargetVersion 33?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
+<config xmlns="http://www.xfa.org/schema/xci/3.0/">
+   <agent name="designer">
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+      </pdf>
+   </agent>
+   <present>
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+         <version>1.7</version>
+         <adobeExtensionLevel>8</adobeExtensionLevel>
+      </pdf>
+      <xdp>
+         <packets>*</packets>
+      </xdp>
+   </present>
+</config>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.156067, 2014/03/04-12:38:26        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
+         <xmp:MetadataDate>2019-02-11T16:49:25Z</xmp:MetadataDate>
+         <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
+      </rdf:Description>
+      <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
+         <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
+      </rdf:Description>
+      <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
+         <xmpMM:DocumentID>uuid:2e08751f-7cf6-4c8c-ad2c-4f124842417c</xmpMM:DocumentID>
+      </rdf:Description>
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">Ballot</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">Represents contentArea content (e.g. instructions, contests, etc.)</rdf:li>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.Ballot</dc:identifier>
+                  <lcd:fragmentRole>Subform</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+<localeSet xmlns="http://www.xfa.org/schema/xfa-locale-set/2.7/">
+   <locale name="en_US" desc="English (United States)">
+      <calendarSymbols name="gregorian">
+         <monthNames>
+            <month>January</month>
+            <month>February</month>
+            <month>March</month>
+            <month>April</month>
+            <month>May</month>
+            <month>June</month>
+            <month>July</month>
+            <month>August</month>
+            <month>September</month>
+            <month>October</month>
+            <month>November</month>
+            <month>December</month>
+         </monthNames>
+         <monthNames abbr="1">
+            <month>Jan</month>
+            <month>Feb</month>
+            <month>Mar</month>
+            <month>Apr</month>
+            <month>May</month>
+            <month>Jun</month>
+            <month>Jul</month>
+            <month>Aug</month>
+            <month>Sep</month>
+            <month>Oct</month>
+            <month>Nov</month>
+            <month>Dec</month>
+         </monthNames>
+         <dayNames>
+            <day>Sunday</day>
+            <day>Monday</day>
+            <day>Tuesday</day>
+            <day>Wednesday</day>
+            <day>Thursday</day>
+            <day>Friday</day>
+            <day>Saturday</day>
+         </dayNames>
+         <dayNames abbr="1">
+            <day>Sun</day>
+            <day>Mon</day>
+            <day>Tue</day>
+            <day>Wed</day>
+            <day>Thu</day>
+            <day>Fri</day>
+            <day>Sat</day>
+         </dayNames>
+         <meridiemNames>
+            <meridiem>AM</meridiem>
+            <meridiem>PM</meridiem>
+         </meridiemNames>
+         <eraNames>
+            <era>BC</era>
+            <era>AD</era>
+         </eraNames>
+      </calendarSymbols>
+      <datePatterns>
+         <datePattern name="full">EEEE, MMMM D, YYYY</datePattern>
+         <datePattern name="long">MMMM D, YYYY</datePattern>
+         <datePattern name="med">MMM D, YYYY</datePattern>
+         <datePattern name="short">M/D/YY</datePattern>
+      </datePatterns>
+      <timePatterns>
+         <timePattern name="full">h:MM:SS A Z</timePattern>
+         <timePattern name="long">h:MM:SS A Z</timePattern>
+         <timePattern name="med">h:MM:SS A</timePattern>
+         <timePattern name="short">h:MM A</timePattern>
+      </timePatterns>
+      <dateTimeSymbols>GyMdkHmsSEDFwWahKzZ</dateTimeSymbols>
+      <numberPatterns>
+         <numberPattern name="numeric">z,zz9.zzz</numberPattern>
+         <numberPattern name="currency">$z,zz9.99|($z,zz9.99)</numberPattern>
+         <numberPattern name="percent">z,zz9%</numberPattern>
+      </numberPatterns>
+      <numberSymbols>
+         <numberSymbol name="decimal">.</numberSymbol>
+         <numberSymbol name="grouping">,</numberSymbol>
+         <numberSymbol name="percent">%</numberSymbol>
+         <numberSymbol name="minus">-</numberSymbol>
+         <numberSymbol name="zero">0</numberSymbol>
+      </numberSymbols>
+      <currencySymbols>
+         <currencySymbol name="symbol">$</currencySymbol>
+         <currencySymbol name="isoname">USD</currencySymbol>
+         <currencySymbol name="decimal">.</currencySymbol>
+      </currencySymbols>
+      <typefaces>
+         <typeface name="Myriad Pro"/>
+         <typeface name="Minion Pro"/>
+         <typeface name="Courier Std"/>
+         <typeface name="Adobe Pi Std"/>
+         <typeface name="Adobe Hebrew"/>
+         <typeface name="Adobe Arabic"/>
+         <typeface name="Adobe Thai"/>
+         <typeface name="Kozuka Gothic Pro-VI M"/>
+         <typeface name="Kozuka Mincho Pro-VI R"/>
+         <typeface name="Adobe Ming Std L"/>
+         <typeface name="Adobe Song Std L"/>
+         <typeface name="Adobe Myungjo Std M"/>
+      </typefaces>
+   </locale>
+</localeSet></xdp:xdp>

@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.1.20160728.2.925958" APIVersion="3.6.16210.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2018-02-04T22:34:00Z" uuid="7a4950c5-43c4-49e3-92e5-5bad341d27e8">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
+   <?formServer defaultPDFRenderFormat acrobat10.0static?>
+   <subform name="form1" locale="en_US" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea x="28.448mm" y="21.341mm" w="58.039mm" h="241.194mm" name="ColA"/>
+            <medium stock="letter" short="8.5in" long="11in"/>
+         </pageArea>
+      </pageSet>
+      <subform>
+         <variables>
+            <script contentType="application/x-javascript" name="SelectionManager">/** Version Control Object */
+var oVersionInfo = {
+	identifier: "SelectionManager",
+	assetType: "fragment",
+	description: "Emulates an exclusion group that allows multiple selections",
+	currentVersion: 1
+};
+
+var mostRecentlyCheckedSOM = "";
+// for RCV, we can't just clear the value, it would remove the previous rank for 
+// that contest option, if any, so record the old value, in case we need to reset it
+var previouslyCheckedValue = "";
+
+/**
+ * setMinAndMax -- call this from subform initialize to set the minimum and maximum 
+ * 					number of entries that may be selected.
+ * @param vSubform -- the exclusion subform
+ * @param vMin -- minimum number of entries
+ * @param vMax -- maximum number of entries
+ */
+function setMinAndMax(vSubform, vMin, vMax) {
+	// Store these values as variables on the exclusion subform
+	if (vSubform.variables.nodes.namedItem("vMinSelected") == null)
+		vSubform.variables.nodes.append(xfa.form.createNode("integer", "vMinSelected"));
+
+	if (vSubform.variables.nodes.namedItem("vMaxSelected") == null)
+		vSubform.variables.nodes.append(xfa.form.createNode("integer", "vMaxSelected"));
+
+	vSubform.vMinSelected.value = vMin;
+	vSubform.vMaxSelected.value = vMax;
+}
+
+/**
+ * isSelected(vContainer) -- check if there are any populated values
+ * 
+ * @param vContainer -- the field/exclGroup/subform/subformSet/area to check
+ * @return - boolean: true if something in the container is selected, false otherwise.
+ */
+function isSelected(vContainer) {
+	switch (vContainer.className) {
+		case "field":
+			////console.println(vContainer.name + " " + vContainer.className + " " + vContainer.ui.oneOfChild.className);
+			// Different logic to check selected based on field type
+			if (vContainer.ui.oneOfChild.className == "checkButton") {
+				// We are concerned only about Reader 8 and beyond so we
+				// will simply check if the vContainer.selectedIndex == 0
+				// But to be compatible with Reader 7 we'll do it the hard way.
+				////console.println("ugh " + vContainer.selectedIndex );
+				// The "on" value is represented by the first element under &lt;items&gt;:
+				// &lt;field&gt;
+				//   &lt;items&gt;
+				//	   &lt;text&gt;yes&lt;/text&gt;
+				//     &lt;text&gt;no&lt;/text&gt;
+				//   &lt;/items&gt;
+				// &lt;/field&gt;
+
+				if (vContainer.selectedIndex == 0)
+					return true;
+			}
+			else //we do not support any other field types
+			{
+				// A text/numeric field etc.
+				return false;
+			}
+			break;
+		case "exclGroup":
+			if (!vContainer.isNull &amp;&amp; vContainer.rawValue != "")
+				return true;
+			break;
+		case "area":
+		case "subform":
+		case "subformSet":
+			// Loop through the nested objects
+			for (var i = 0; i &lt; vContainer.nodes.length; i++) {
+				if (isSelected(vContainer.nodes.item(i)))
+					return true;
+			}
+	}
+	return false;
+}
+
+/**
+ * clearContainer() - clean any populated values in the container and all nested children
+ * 
+ * @param vContainer - the field/subform... to empty
+ */
+function clearContainer(vContainer) {
+	switch (vContainer.className) {
+		case "field":
+                  if(vContainer.ui.oneOfChild.className !== "checkButton")                  
+                        break;
+		case "exclGroup":
+			// for RCV, need to revert to old rank
+                  if(previouslyCheckedValue){
+				vContainer.rawValue = previouslyCheckedValue;
+                  } else {
+                        // The most reliable way to set a field/exclusion group to null
+                        // is to set the dataNode to null.
+                        // ... but if the binding is set to "none" there will not be a dataNode
+                        if (vContainer.dataNode != null)
+      				vContainer.dataNode.isNull = true;
+      			else
+      				vContainer.rawValue = null;
+                  }
+			break;
+		case "area":
+		case "subform":
+		case "subformSet":
+			for (var i = 0; i &lt; vContainer.nodes.length; i++)
+				clearContainer(vContainer.nodes.item(i));
+	}
+}
+
+/**
+ * setMandatory() Set the mandatory state of a container
+ * 
+ * @param vContainer -- the container (field/subform etc) to modify
+ * @param vMakeMandatory -- true: set mandatory, false: set not mandatory
+ */
+function setMandatory(vContainer, vMakeMandatory) {
+	switch (vContainer.className) {
+		case "field":
+		case "exclGroup":
+			// Mandatory enum is one of: "error" (mandatory)
+			//                           "disabled" (optional)
+			//                           "warning" (overrideable)
+			if (vContainer.presence != "hidden") {
+				if (vMakeMandatory) {
+					if (vContainer.mandatory != "warning") {
+				//console.println("manding " + vContainer.somExpression);
+						vContainer.mandatory = "warning";
+					}
+					//vContainer.mandatory = "error";					
+				}
+				else {
+					//console.println("demand " + vContainer.somExpression);
+					vContainer.mandatory = "disabled";
+				}
+			}
+			break;
+		case "area":
+		case "subform":
+		case "subformSet":
+			// Propagate the mandatory setting to all nested objects
+			for (var i = 0; i &lt; vContainer.nodes.length; i++)
+				setMandatory(vContainer.nodes.item(i), vMakeMandatory);
+	}
+}
+/*
+ * Make sure that only one child of a given subform is selected.
+ * @param vSubform -- a reference to the subform object we want to make exclusive
+ */
+function makeExclusive(vSubform) {
+	// Build a list of all children that look like they are selected
+	// Because this loop examines all the children objects, it has 
+	// the nice side-effect of making this calculation 
+	// dependent on the values of all its children. This means that if
+	// any children change this calculation will re-fire.
+	var vSelectedContainers = new Array();
+	var vNumSubforms = vSubform.nodes.length;
+	for (var i = 0; i &lt; vNumSubforms; i++) {
+		var vChild = vSubform.nodes.item(i);
+		if (isSelected(vChild)) {
+			vSelectedContainers[vSelectedContainers.length] = vChild;
+		}
+	}
+	var vNumSelectedContainers = vSelectedContainers.length;
+	//only do the check if we have exceeded our limit
+	if (vNumSelectedContainers &gt; vSubform.vMaxSelected.value) {
+		// Now that we have the list of selected containers, we need to make sure 
+		// that the number selected is in the specified range.
+		for (var j = 0; j &lt; vNumSelectedContainers; j++) {
+			// try to find the most recently selected container
+			// we must uncheck it (since we can't keep it from being)
+			// checked in the first place
+			if (vSelectedContainers.length &gt; 1 &amp;&amp;
+				vSelectedContainers[j].somExpression == mostRecentlyCheckedSOM
+			) {
+				xfa.host.messageBox("Please uncheck your previous choice before making a new choice. This helps make sure you only change your vote when you mean to change it.", "Too many selections", 3);
+				// clear the most recently selected container				
+				clearContainer(vSelectedContainers[j]);
+				mostRecentlyCheckedSOM = "";
+				//we can stop iterating at this point
+				break;
+			}
+		}
+	}
+	else {
+		// If the user has selected less than the maximum, make everything mandatory
+		// This way the form won't submit until they've selected the maximum number of entries
+		// If we want to be less strict about undervotes, we can change this to &lt; vSubform.vMinSelected
+		var vMandatory = vSelectedContainers.length &lt; vSubform.vMaxSelected.value;
+		setMandatory(vSubform, vMandatory);
+	}
+	vMandatory = vSelectedContainers.length &lt; vSubform.vMaxSelected.value;
+	var vHelper = vSubform.resolveNode("UndervoteHelper");
+	if (vMandatory) {
+		//populate the non-obtrusive undervote notification
+		vHelper.rawValue = "You can choose " + (vSubform.vMaxSelected.value - vSelectedContainers.length) + " more.";
+	}
+	else {
+		vHelper.rawValue = " ";
+	}
+}
+
+               
+               
+               <?templateDesigner isFragment yes?>
+               <?templateDesigner fragmentTitle SelectionManager?>
+               <?templateDesigner fragmentDescription Script fragment for overvote control.?></script>
+         </variables>
+      </subform>
+   </subform>
+   <?templateDesigner FormTargetVersion 33?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
+   <?templateDesigner Zoom 99?></template>
+<config xmlns="http://www.xfa.org/schema/xci/3.0/">
+   <agent name="designer">
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+      </pdf>
+   </agent>
+   <present>
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+         <version>1.7</version>
+         <adobeExtensionLevel>8</adobeExtensionLevel>
+      </pdf>
+      <xdp>
+         <packets>*</packets>
+      </xdp>
+   </present>
+</config>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.4-c005 78.150055, 2013/08/07-22:58:47        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
+         <xmp:MetadataDate>2018-02-04T22:34Z</xmp:MetadataDate>
+         <xmp:CreatorTool>Designer 6.1</xmp:CreatorTool>
+      </rdf:Description>
+      <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
+         <pdf:Producer>Designer 6.1</pdf:Producer>
+      </rdf:Description>
+      <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
+         <xmpMM:DocumentID>uuid:7a4950c5-43c4-49e3-92e5-5bad341d27e8</xmpMM:DocumentID>
+      </rdf:Description>
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">SelectionManager</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">Script fragment for overvote control.</rdf:li>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.#subform.#variables.SelectionManager</dc:identifier>
+                  <lcd:fragmentRole>ScriptObject</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+<localeSet xmlns="http://www.xfa.org/schema/xfa-locale-set/2.7/">
+   <locale name="en_US" desc="English (United States)">
+      <calendarSymbols name="gregorian">
+         <monthNames>
+            <month>January</month>
+            <month>February</month>
+            <month>March</month>
+            <month>April</month>
+            <month>May</month>
+            <month>June</month>
+            <month>July</month>
+            <month>August</month>
+            <month>September</month>
+            <month>October</month>
+            <month>November</month>
+            <month>December</month>
+         </monthNames>
+         <monthNames abbr="1">
+            <month>Jan</month>
+            <month>Feb</month>
+            <month>Mar</month>
+            <month>Apr</month>
+            <month>May</month>
+            <month>Jun</month>
+            <month>Jul</month>
+            <month>Aug</month>
+            <month>Sep</month>
+            <month>Oct</month>
+            <month>Nov</month>
+            <month>Dec</month>
+         </monthNames>
+         <dayNames>
+            <day>Sunday</day>
+            <day>Monday</day>
+            <day>Tuesday</day>
+            <day>Wednesday</day>
+            <day>Thursday</day>
+            <day>Friday</day>
+            <day>Saturday</day>
+         </dayNames>
+         <dayNames abbr="1">
+            <day>Sun</day>
+            <day>Mon</day>
+            <day>Tue</day>
+            <day>Wed</day>
+            <day>Thu</day>
+            <day>Fri</day>
+            <day>Sat</day>
+         </dayNames>
+         <meridiemNames>
+            <meridiem>AM</meridiem>
+            <meridiem>PM</meridiem>
+         </meridiemNames>
+         <eraNames>
+            <era>BC</era>
+            <era>AD</era>
+         </eraNames>
+      </calendarSymbols>
+      <datePatterns>
+         <datePattern name="full">EEEE, MMMM D, YYYY</datePattern>
+         <datePattern name="long">MMMM D, YYYY</datePattern>
+         <datePattern name="med">MMM D, YYYY</datePattern>
+         <datePattern name="short">M/D/YY</datePattern>
+      </datePatterns>
+      <timePatterns>
+         <timePattern name="full">h:MM:SS A Z</timePattern>
+         <timePattern name="long">h:MM:SS A Z</timePattern>
+         <timePattern name="med">h:MM:SS A</timePattern>
+         <timePattern name="short">h:MM A</timePattern>
+      </timePatterns>
+      <dateTimeSymbols>GyMdkHmsSEDFwWahKzZ</dateTimeSymbols>
+      <numberPatterns>
+         <numberPattern name="numeric">z,zz9.zzz</numberPattern>
+         <numberPattern name="currency">$z,zz9.99|($z,zz9.99)</numberPattern>
+         <numberPattern name="percent">z,zz9%</numberPattern>
+      </numberPatterns>
+      <numberSymbols>
+         <numberSymbol name="decimal">.</numberSymbol>
+         <numberSymbol name="grouping">,</numberSymbol>
+         <numberSymbol name="percent">%</numberSymbol>
+         <numberSymbol name="minus">-</numberSymbol>
+         <numberSymbol name="zero">0</numberSymbol>
+      </numberSymbols>
+      <currencySymbols>
+         <currencySymbol name="symbol">$</currencySymbol>
+         <currencySymbol name="isoname">USD</currencySymbol>
+         <currencySymbol name="decimal">.</currencySymbol>
+      </currencySymbols>
+      <typefaces>
+         <typeface name="Myriad Pro"/>
+         <typeface name="Minion Pro"/>
+         <typeface name="Courier Std"/>
+         <typeface name="Adobe Pi Std"/>
+         <typeface name="Adobe Hebrew"/>
+         <typeface name="Adobe Arabic"/>
+         <typeface name="Adobe Thai"/>
+         <typeface name="Kozuka Gothic Pro-VI M"/>
+         <typeface name="Kozuka Mincho Pro-VI R"/>
+         <typeface name="Adobe Ming Std L"/>
+         <typeface name="Adobe Song Std L"/>
+         <typeface name="Adobe Myungjo Std M"/>
+         <typeface name="Adobe Devanagari"/>
+      </typefaces>
+   </locale>
+</localeSet></xdp:xdp>

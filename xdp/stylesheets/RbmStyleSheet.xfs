@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.1.20160728.2.925958" APIVersion="3.6.16210.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.6/">
+   <subform name="StyleSheet" locale="en_US">
+      <pageSet name="BallotPacket">
+         <pageArea name="BallotLayout" id="Page1">
+            <contentArea x="15.078mm" y="21.341mm" w="187.452mm" h="241.194mm" name="ColA"/>
+            <medium stock="letter" short="8.5in" long="11in"/>
+            <draw name="BallotHeading" y="6.279mm" x="58.739mm" w="96.22mm" h="6.644mm">
+               <ui>
+                  <textEdit>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <value>
+                  <exData contentType="text/html">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="font-family:'Myriad Pro'">OFFICIAL GENERAL ELECTION BALLOT</p></body>
+                  </exData>
+               </value>
+               <font size="16pt" typeface="Myriad Pro" weight="bold" baselineShift="0pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
+            </draw>
+            <draw name="TestNotice" y="6.728mm" x="177.563mm" w="29.2864mm" h="5.2331mm">
+               <ui>
+                  <textEdit>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <value>
+                  <text>LC RCV MATRIX</text>
+               </value>
+               <font typeface="Myriad Pro"/>
+            </draw>
+            <draw name="Left" y="21.341mm" x="15.078mm" w="187.452mm" h="241.194mm">
+               <value>
+                  <rectangle>
+                     <edge/>
+                     <corner radius="5.08mm"/>
+                  </rectangle>
+               </value>
+               <ui>
+                  <defaultUi/>
+               </ui>
+            </draw>
+            <field name="CurrentPageNumber" y="0mm" x="0mm" w="62mm" h="9mm" id="floatingField013941" access="readOnly" presence="hidden">
+               <ui>
+                  <numericEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </numericEdit>
+               </ui>
+               <font typeface="Myriad Pro"/>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para vAlign="middle"/>
+               <event activity="ready" ref="$layout" name="event__layout_ready">
+                  <script contentType="application/x-javascript">this.rawValue = xfa.layout.page(this);
+</script>
+               </event>
+               <calculate override="error"/>
+               <bind match="none"/>
+            </field>
+            <field name="NumberofPages" y="0mm" x="0mm" w="62mm" h="9mm" id="floatingField020775" access="readOnly" presence="hidden">
+               <ui>
+                  <numericEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </numericEdit>
+               </ui>
+               <font typeface="Myriad Pro"/>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para vAlign="middle"/>
+               <event activity="ready" ref="$layout" name="event__layout_ready">
+                  <script contentType="application/x-javascript">this.rawValue = xfa.layout.pageCount();
+</script>
+               </event>
+               <calculate override="error"/>
+               <bind match="none"/>
+            </field>
+            <field name="VoteBothSides" y="0mm" x="0mm" w="62mm" h="9mm" id="floatingField003686" presence="hidden" access="readOnly">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Myriad Pro"/>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para vAlign="middle"/>
+               <event activity="ready" ref="$layout" name="event__layout_ready">
+                  <script contentType="application/x-javascript">if ((CurrentPageNumber.rawValue % 2 === 1) &amp;&amp; (NumberofPages.rawValue &gt; CurrentPageNumber.rawValue)) {
+	this.rawValue = "VOTE BOTH SIDES";
+}
+else {
+	this.rawValue = "";
+}
+
+</script>
+               </event>
+               <bind match="none"/>
+            </field>
+            <draw name="Text5" y="263.186mm" x="144.526mm" w="58.039mm" h="11.534mm">
+               <ui>
+                  <textEdit>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <value>
+                  <exData contentType="text/html">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="letter-spacing:0in">Page<span style="xfa-spacerun:yes"> </span><span xfa:embedType="uri" xfa:embedMode="raw" xfa:embed="#floatingField013941"/> of<span style="xfa-spacerun:yes"> </span><span xfa:embedType="uri" xfa:embedMode="raw" xfa:embed="#floatingField020775"/></p><p style="letter-spacing:0in"><span xfa:embedType="uri" xfa:embedMode="raw" xfa:embed="#floatingField003686"/></p></body>
+                  </exData>
+               </value>
+               <font typeface="Myriad Pro"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para hAlign="center"/>
+            </draw>
+         </pageArea>
+      </pageSet>
+      <subform w="0in" h="0in"/>
+      <proto>
+         <subform name="designer__stylesheet">
+            <draw name="DefaultTextStyle" w="58.039mm" minH="5.233mm">
+               <ui>
+                  <textEdit/>
+               </ui>
+               <font typeface="Myriad Pro"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.7056mm" rightInset="0.7056mm"/>
+               <border>
+                  <edge presence="hidden"/>
+               </border>
+            </draw>
+            <field name="FormattedFloatingField" w="62mm" h="9mm">
+               <ui>
+                  <textEdit>
+                     <border presence="hidden"/>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Myriad Pro" weight="bold"/>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para vAlign="middle"/>
+            </field>
+            <field name="TableCheckbox" w="27.7583mm" minH="0mm">
+               <ui>
+                  <checkButton size="4.318mm" shape="round" mark="circle">
+                     <border hand="right">
+                        <edge/>
+                        <fill/>
+                     </border>
+                  </checkButton>
+               </ui>
+               <margin leftInset="0mm" rightInset="11.72mm" topInset="0mm" bottomInset="0mm"/>
+               <border>
+                  <edge/>
+                  <corner thickness="0.176mm"/>
+               </border>
+            </field>
+         </subform>
+      </proto>
+   </subform>
+   <?templateDesigner DefaultCaptionFontSettings face:Myriad Pro;size:10;weight:normal;style:normal?>
+   <?templateDesigner DefaultValueFontSettings face:Myriad Pro;size:10;weight:normal;style:normal?></template></xdp:xdp>

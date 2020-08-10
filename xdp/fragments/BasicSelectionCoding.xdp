@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.1.20160728.2.925958" APIVersion="3.6.16210.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
+   <subform name="form1" locale="en_US" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea x="28.448mm" y="21.341mm" w="58.039mm" h="241.194mm" name="ColA"/>
+            <medium stock="letter" short="8.5in" long="11in"/>
+         </pageArea>
+      </pageSet>
+      <subform>
+         <variables>
+            <script contentType="application/x-javascript" name="BasicSelectionCoding">function encodeSelections(oContests){
+	var numContests = oContests.length;
+	//console.println("calcin bc" + numContests);
+	var values = "";
+	var contests = new Array();
+	var delimiter = ":";
+	var seldelimiter = ";";
+	var rankdelimiter = "!";
+	for (var i = 0; i &lt; numContests; i++) {
+	    values += oContests.item(i).RaceCode.rawValue + delimiter;
+	    //get all named selections
+	    var oChoices =  oContests.item(i).resolveNodes("BallotChoices.Candidate[*].Selections[*]");
+	    var numChoices = oChoices.length;
+	    for (var j = 0; j &lt; numChoices; j++) {
+	    	if (oChoices.item(j).Selected.rawValue === "true") {
+	  		  values += oChoices.item(j).SelectionCode.rawValue + seldelimiter;
+	    	} else if (!isNaN(parseInt(oChoices.item(j).Selected.rawValue))){
+			  // is a number, so a ranked choice			  
+			  values += oChoices.item(j).SelectionCode.rawValue + rankdelimiter + oChoices.item(j).Selected.rawValue + seldelimiter;
+	    	}
+	    }
+	    // write out ReferendumOption as well  
+	    var oChoices =  oContests.item(i).resolveNodes("BallotChoices.ReferendumOption[*].Selections[*]");
+	    var numChoices = oChoices.length;
+	    for (var j = 0; j &lt; numChoices; j++) {
+	    	if (oChoices.item(j).Selected.rawValue === "true") {
+	  		  values += oChoices.item(j).SelectionCode.rawValue + seldelimiter;
+	    	}
+	    }  
+	    //if there are any write-ins, write them out
+	    oChoices =  oContests.item(i).resolveNodes("BallotChoices.WriteIn[*].Selections[*]");
+	    numChoices = oChoices.length;
+	    for (j = 0; j &lt; numChoices; j++) {
+	  	  if (oChoices.item(j).Selected.rawValue === "true") {
+	  	      values += "\"" + oChoices.item(i).WriteInName.rawValue + "\"" + seldelimiter;
+	  	//	  console.println(oChoices.item(j).WriteInName.rawValue + "true");  		
+	  	  } else if (!isNaN(parseInt(oChoices.item(j).Selected.rawValue))){
+			  // is a number, so a ranked choice			  
+			  values +=  "\"" + oChoices.item(i).WriteInName.rawValue + "\"" + rankdelimiter + oChoices.item(j).Selected.rawValue + seldelimiter;
+	    	}
+	    }     
+	}
+	return values;
+}
+
+
+               
+               
+               
+               <?templateDesigner isFragment yes?>
+               <?templateDesigner fragmentTitle BasicSelectionCoding?>
+               <?templateDesigner fragmentDescription Script fragment for a basic encoding using punctuation as delimiters.?></script>
+         </variables>
+      </subform>
+   </subform>
+</template>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.156067, 2014/03/04-12:38:26        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">BasicSelectionCoding</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">Script fragment for a basic encoding using punctuation as delimiters.</rdf:li>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.#subform.#variables.BasicSelectionCoding</dc:identifier>
+                  <lcd:fragmentRole>ScriptObject</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta></xdp:xdp>

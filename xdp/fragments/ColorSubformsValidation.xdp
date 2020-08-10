@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.1.20160728.2.925958" APIVersion="3.6.16210.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
+   <subform name="form1" locale="en_US" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea x="28.448mm" y="21.341mm" w="58.039mm" h="241.194mm" name="ColA"/>
+            <medium stock="letter" short="8.5in" long="11in"/>
+         </pageArea>
+      </pageSet>
+      <subform>
+         <variables>
+            <script name="ColorSubformsValidation" contentType="application/x-javascript">/** Version Control Object */
+var oVersionInfo = {
+    identifier:    "ColorSubformsValidation",
+    assetType:     "fragment",
+    description:   "Colors the subform containing the failed field",
+    currentVersion: 1 
+};
+
+function InitializeColorSubforms() {
+	// Disable Acrobat's field highlighting. The Color
+	// Failed Fields action takes care of highlighting fields.
+	if (xfa.host.name === "Acrobat") {
+		app.runtimeHighlight = false;
+	}
+}
+function DoColorSubforms(oInvalidNode) {
+	// If this form is running on a client other than Acrobat
+	// (like on the server) then don't run this script
+	if (xfa.host.name !== "Acrobat") {
+		return;
+	}
+	var sClassName = oInvalidNode.className;	
+	// Only contests, so nodes that are &lt;field&gt;s and
+	// have name "Selected"
+	// Ignore everything else
+	if ((sClassName !== "field") || 
+	    (oInvalidNode.name !== "Selected")) {
+		return;
+	}	
+	var nearestContest = oInvalidNode.resolveNode("Contest");	
+	if (oInvalidNode.errorText === "") {		
+		// Validation Succeeded					
+		xfa.resolveNode(nearestContest.border.somExpression).presence = "invisible";			
+		return;		
+	}				
+	//console.println("valcolor: " + oInvalidNode.somExpression);
+	var oFailedBorder = nearestContest.border;
+	// Border color
+	// Show a solid border with square corners
+	var sBorderColor = "51, 102, 255";			
+	oFailedBorder.presence = "visible";	
+	//useing a right handed stoke ensures the border
+	//appears consistent across the entire contest.
+	oFailedBorder.hand = "even";
+	for (var i = 0; i &lt; 3; i++) {
+		var oEdge = oFailedBorder.getElement("edge", i);		
+		oEdge.presence = "visible";		
+		oEdge.color.value = sBorderColor;		
+		oEdge.thickness = "2pt";				
+		oEdge.stroke = "solid";		
+		var oCorner = oFailedBorder.getElement("corner", i);
+		oCorner.presence = "visible";
+		oCorner.color.value = sBorderColor;
+		oCorner.thickness = "2pt";			
+		oCorner.stroke = "solid";
+		oCorner.join = "square";
+		oCorner.inverted = "0";
+		oCorner.radius = "0mm";	
+	} 
+	// Background color
+	// Show a solid fill color
+	var sFillColor = "153, 204, 255";		
+	// The presence of the border must be visible to show the fill.
+	// Hide the edges when the invalid appearance doesn't include
+	// changing the border color
+	if (oFailedBorder.presence !== "visible") {
+		oFailedBorder.presence = "visible";
+		oFailedBorder.edge.presence = "invisible";
+	}
+	
+	// Replace the current fill type with a solid fill
+	if (oFailedBorder.fill.oneOfChild.className !== "solid") {
+		var oFailedFillType = oFailedBorder.fill.oneOfChild;
+		oFailedBorder.fill.nodes.remove(oFailedFillType);			
+		var oSolid = xfa.form.createNode("solid", "");			
+		oFailedBorder.fill.nodes.append(oSolid);
+	}
+	oFailedBorder.fill.color.value = sFillColor;			
+}
+
+               
+               
+               
+               <?templateDesigner isFragment yes?>
+               <?templateDesigner fragmentTitle ColorSubformsValidation?>
+               <?templateDesigner fragmentDescription Script fragment representing the color subforms validation support for undervote protection.?></script>
+         </variables>
+      </subform>
+   </subform>
+</template>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.4-c005 78.150055, 2013/08/07-22:58:47        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">ColorSubformsValidation</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">Script fragment representing the color subforms validation support for undervote protection.</rdf:li>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.#subform.#variables.ColorSubformsValidation</dc:identifier>
+                  <lcd:fragmentRole>ScriptObject</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta></xdp:xdp>

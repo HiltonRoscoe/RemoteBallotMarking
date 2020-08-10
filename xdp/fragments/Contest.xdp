@@ -1,0 +1,1059 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.1.20160728.2.925958" APIVersion="3.6.16210.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2019-02-24T23:09:45Z" uuid="20154875-15fc-49e6-8759-575f525f0398">
+<template xmlns:xliff="urn:oasis:names:tc:xliff:document:1.1" xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
+   <?formServer defaultPDFRenderFormat acrobat10.0static?>
+   <subform name="form1" locale="en_US" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea x="28.448mm" y="21.341mm" w="58.039mm" h="241.194mm" name="ColA"/>
+            <medium stock="letter" short="8.5in" long="11in"/>
+            <?templateDesigner expand 1?></pageArea>
+         <?templateDesigner expand 1?></pageSet>
+      <subform name="Contest" layout="tb">
+         <field name="RaceCode" w="62mm" h="9mm" id="floatingField_coRaceCode" access="readOnly" presence="hidden">
+            <ui>
+               <textEdit/>
+            </ui>
+            <bind match="dataRef" ref="$.ContestIdentifier.IdNumber"/>
+         </field>
+         <field name="RaceName" id="floatingField_coRaceName" access="readOnly" presence="hidden" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.FormattedFloatingField)">
+            <ui>
+               <textEdit allowRichText="1"/>
+            </ui>
+            <bind match="dataRef" ref="$.ContestIdentifier.ContestName"/>
+            <value>
+               <exData contentType="text/html"/>
+            </value>
+         </field>
+         <field name="MaxSelections" id="floatingField_coMaxSelections" presence="hidden" access="readOnly" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.FormattedFloatingField)">
+            <ui>
+               <textEdit allowRichText="1"/>
+            </ui>
+            <bind match="dataRef" ref="$.MaxVotes"/>
+            <value>
+               <exData contentType="text/html"/>
+            </value>
+         </field>
+         <field name="UndervoteHelper" w="62mm" h="9mm" id="floatingField_coUndervoteHelper" presence="hidden" access="readOnly">
+            <ui>
+               <textEdit/>
+            </ui>
+            <bind match="none"/>
+         </field>
+         <subform name="InstructionsContainer" layout="tb">
+            <bind match="dataRef" ref="$.HowToVote.[Exists($) and Exists(Messages)]"/>
+            <field name="Instruction" id="floatingField_bmInstruction" presence="hidden" access="readOnly" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.FormattedFloatingField)">
+               <ui>
+                  <textEdit allowRichText="1"/>
+               </ui>
+               <bind match="dataRef" ref="$.Message"/>
+               <value>
+                  <exData contentType="text/html"/>
+               </value>
+            </field>
+            <occur min="0"/>
+            <?templateDesigner expand 1?></subform>
+         <subformSet relation="choice" name="ContestStyle">
+            <subform layout="tb" name="DefaultContest">
+               <draw name="Header" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.DefaultTextStyle)">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <exData contentType="text/html" xliff:rid="5122A42F-8F40-4C2E-B25D-6FA714BF66ED">
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+                            <p style="letter-spacing:0in;font-weight: bold;">
+                              <span xfa:embedType="uri" xfa:embedMode="formatted" xfa:embed="#floatingField_coRaceName"/>
+                            </p>
+                            <p style="font-size:8pt;letter-spacing:0in;font-weight: bold;">(Vote for not more than<span style="xfa-spacerun:yes"> </span><span xfa:embedType="uri" xfa:embedMode="raw" xfa:embed="#floatingField_coMaxSelections"/>)</p>
+                          </body>
+                     </exData>
+                  </value>
+                  <margin bottomInset="0mm"/>
+                  <keep next="contentArea"/>
+               </draw>
+               <draw presence="visible" relevant="-print" name="Helper" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.DefaultTextStyle)">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <exData contentType="text/html">
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+                            <p>
+                              <span xfa:embedType="uri" xfa:embedMode="raw" xfa:embed="#floatingField_coUndervoteHelper"/>
+                            </p>
+                          </body>
+                     </exData>
+                  </value>
+                  <font size="8pt" weight="bold"/>
+               </draw>
+               <border>
+                  <edge thickness="0.0175mm"/>
+                  <corner thickness="0.018mm"/>
+                  <fill>
+                     <color value="192,192,192"/>
+                  </fill>
+               </border>
+               <bind match="none"/>
+               <keep next="contentArea"/>
+               <overflow trailer=""/>
+               <?templateDesigner expand 1?></subform>
+            <subform name="BallotMeasureContest" layout="tb">
+               <subform y="-16.818mm" layout="tb" name="Header" id="Header_ID">
+                  <draw name="Header" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.DefaultTextStyle)">
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <exData contentType="text/html">
+                           <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+                              <p style="letter-spacing:0in;font-weight: bold;">
+                                <span xfa:embedType="uri" xfa:embedMode="formatted" xfa:embed="#floatingField_coRaceName"/>
+                              </p>
+                              <p style="font-size:8pt;letter-spacing:0in;font-weight: bold;">
+                                <span xfa:embedType="uri" xfa:embedMode="raw" xfa:embed="#floatingField_bmInstruction"/>
+                                <span style="font-size:10pt">
+                                  <span style="xfa-spacerun:yes"> </span>
+                                </span>
+                              </p>
+                            </body>
+                        </exData>
+                     </value>
+                     <border break="close"/>
+                  </draw>
+                  <border>
+                     <edge/>
+                     <fill>
+                        <color value="192,192,192"/>
+                     </fill>
+                     <corner thickness="0.175mm"/>
+                  </border>
+                  <bind match="none"/>
+                  <keep intact="contentArea" next="contentArea"/>
+                  <overflow leader="" trailer=""/>
+                  <?templateDesigner expand 1?></subform>
+               <border>
+                  <edge thickness="0.0175mm" presence="hidden"/>
+                  <corner thickness="0.018mm" presence="hidden"/>
+               </border>
+               <bind match="dataRef" ref="$.Messages.[Exists($)]"/>
+               <subform layout="tb" name="Body">
+                  <draw name="Body" w="58.039mm">
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <exData contentType="text/html">
+                           <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+                              <p style="orphans:20;widows:0">
+                                <span xfa:embedType="uri" xfa:embedMode="formatted" xfa:embed="#floatingField_bmQuestionBody"/>
+                              </p>
+                            </body>
+                        </exData>
+                     </value>
+                     <margin leftInset="0.7056mm" topInset="0.7056mm" rightInset="0.7056mm" bottomInset="0.7056mm"/>
+                     <keep intact="none"/>
+                  </draw>
+                  <bind match="none"/>
+                  <setProperty target="keep.intact" ref="KeepIntact.[Target == &quot;MeasureText&quot;]"/>
+                  <keep previous="contentArea"/>
+                  <overflow leader="" trailer=""/>
+                  <?templateDesigner expand 1?></subform>
+               <field name="QuestionBody" w="62mm" h="9mm" id="floatingField_bmQuestionBody" presence="hidden" access="readOnly">
+                  <ui>
+                     <textEdit>
+                        <border>
+                           <edge stroke="lowered"/>
+                        </border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font typeface="Myriad Pro" size="8pt"/>
+                  <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <bind match="dataRef" ref="$.Message.[Type == &quot;MeasureText&quot;]"/>
+                  <value>
+                     <exData contentType="text/html"/>
+                  </value>
+               </field>
+               <keep next="contentArea"/>
+               <?templateDesigner expand 1?></subform>
+            <subform name="InstructionsContest" layout="tb" id="InstructionsContest_ID">
+               <draw name="Header" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.DefaultTextStyle)">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <exData contentType="text/html" xliff:rid="66635D98-CA1D-4C02-9D71-4C1D508732F7">
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="font-weight:bold;letter-spacing:0in"><span xfa:embedType="uri" xfa:embedMode="formatted" xfa:embed="#floatingField_coRaceName"/></p><p style="font-size:8pt;font-weight:bold;letter-spacing:0in"><span xfa:embedType="uri" xfa:embedMode="raw" xfa:embed="#floatingField_icInstruction"/><span style="xfa-spacerun:yes"> </span><span style="font-size:10pt"><span style="xfa-spacerun:yes"> </span></span></p></body>
+                     </exData>
+                  </value>
+               </draw>
+               <field name="Instruction" id="floatingField_icInstruction" presence="hidden" access="readOnly" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.FormattedFloatingField)">
+                  <ui>
+                     <textEdit allowRichText="1"/>
+                  </ui>
+                  <bind match="dataRef" ref="$.Message"/>
+                  <value>
+                     <exData contentType="text/html"/>
+                  </value>
+               </field>
+               <border>
+                  <edge thickness="0.0175mm"/>
+                  <corner thickness="0.018mm"/>
+                  <fill>
+                     <color value="192,192,192"/>
+                  </fill>
+               </border>
+               <bind match="dataRef" ref="$.HowToVote.[Exists($) and not Exists(Messages)]"/>
+               <keep intact="contentArea" next="contentArea"/>
+               <?templateDesigner expand 1?></subform>
+            <?templateDesigner EditByExpression true?>
+            <?templateDesigner LastConnection Default Data Binding?>
+            <?templateDesigner expand 1?></subformSet>
+         <subform layout="tb" name="BallotChoices">
+            <subform name="Party" layout="tb">
+               <bind match="dataRef" ref="$.Affiliation[*]"/>
+               <occur max="-1" min="0"/>
+               <margin topInset="0mm" bottomInset="0mm"/>
+               <subform w="52.451mm" minH="5.08mm" layout="tb" name="Selections">
+                  <field name="Selected" w="52.451mm">
+                     <ui>
+                        <checkButton shape="round">
+                           <border>
+                              <edge/>
+                              <fill/>
+                           </border>
+                        </checkButton>
+                     </ui>
+                     <font typeface="Myriad Pro"/>
+                     <margin leftInset="1.7639mm" rightInset="1mm"/>
+                     <para vAlign="middle"/>
+                     <caption placement="right" reserve="42.376mm">
+                        <para vAlign="middle"/>
+                        <value>
+                           <exData contentType="text/html">
+                              <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"/>
+                           </exData>
+                        </value>
+                     </caption>
+                     <items>
+                        <text xliff:rid="35821439-99B4-4041-9337-21EF91EF6C2B">true</text>
+                        <text/>
+                     </items>
+                     <event activity="initialize" name="event__initialize">
+                        <script contentType="application/x-javascript">defaultText =  &lt;body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"&gt;
+&lt;p id="CandidateName" style="text-decoration:none;letter-spacing:0in;font-weight:bold;"&gt;
+	  {this.resolveNode("PartyId").rawValue}
+&lt;/p&gt;		
+&lt;/body&gt;;
+this.caption.value.exData.loadXML(defaultText.toXMLString(), false, true);
+</script>
+                     </event>
+                     <bind match="dataRef" ref="$.Selected"/>
+                     <setProperty target="caption.value.#text" ref="Party"/>
+                     <setProperty target="caption.value.#text" ref="Party"/>
+                     <event activity="mouseDown" name="event__mouseDown">
+                        <script contentType="application/x-javascript">/**
+* Notes the most recently selected item
+* This is required becuase for overvote control
+* as if there are more votes than availible selections
+* then the most recent selection will be unselected
+* @reference SelectionManager script object
+*/ 
+//SelectionManager.mostRecentlyCheckedSOM = this.resolveNode("Candidate").somExpression;
+</script>
+                     </event>
+                     <event activity="change" name="event__change">
+                        <script contentType="application/x-javascript">/**
+* Notes the most recently selected item
+* This is required becuase for overvote control
+* as if there are more votes than availible selections
+* then the most recent selection will be unselected
+* @reference SelectionManager script object
+*/ 
+SelectionManager.mostRecentlyCheckedSOM = this.resolveNode("Candidate").somExpression;
+
+
+</script>
+                     </event>
+                     <event activity="enter" name="event__enter">
+                        <script contentType="application/x-javascript">/**
+* Notes the most recently selected item
+* This is required becuase for overvote control
+* as if there are more votes than availible selections
+* then the most recent selection will be unselected
+* @reference SelectionManager script object
+*/ 
+SelectionManager.mostRecentlyCheckedSOM = this.resolveNode("Candidate").somExpression;
+</script>
+                     </event>
+                  </field>
+                  <field name="SelectionRaceCode" w="62mm" h="9mm" id="floatingField_paSelectionRaceCode" presence="hidden" access="readOnly">
+                     <ui>
+                        <textEdit>
+                           <border>
+                              <edge stroke="lowered"/>
+                           </border>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Myriad Pro"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle"/>
+                     <bind match="dataRef" ref="$.SelectionRaceCode"/>
+                     <calculate>
+                        <script contentType="application/x-javascript">this.resolveNode("RaceCode").rawValue;
+
+</script>
+                     </calculate>
+                  </field>
+                  <field name="SelectionCode" y="0mm" x="0mm" w="62mm" h="9mm" id="floatingField_paSelectionCode" presence="hidden" access="readOnly">
+                     <ui>
+                        <textEdit>
+                           <border>
+                              <edge stroke="lowered"/>
+                           </border>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Myriad Pro"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle"/>
+                     <bind match="dataRef" ref="$.SelectionCode"/>
+                     <calculate>
+                        <script contentType="application/x-javascript">this.resolveNode("PartyId").rawValue;
+
+</script>
+                     </calculate>
+                  </field>
+                  <bind match="dataRef" ref="$record.Selections.Selection[*]"/>
+                  <margin topInset="2.54mm" bottomInset="2.54mm"/>
+                  <overflow leader="" trailer=""/>
+                  <?templateDesigner expand 1?></subform>
+               <field name="PartyId" y="0mm" x="0mm" w="62mm" h="9mm" id="floatingField_paPartyId" presence="hidden" access="readOnly">
+                  <ui>
+                     <textEdit>
+                        <border>
+                           <edge stroke="lowered"/>
+                        </border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font typeface="Myriad Pro"/>
+                  <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <bind match="dataRef" ref="$.AffiliationIdentifier.RegisteredName"/>
+               </field>
+               <?templateDesigner expand 1?></subform>
+            <subform name="Candidate" layout="tb">
+               <occur min="0" max="-1"/>
+               <subform w="52.451mm" minH="5.08mm" layout="tb" name="Selections">
+                  <field name="Selected" w="52.451mm">
+                     <ui>
+                        <checkButton shape="round">
+                           <border>
+                              <edge/>
+                              <fill/>
+                           </border>
+                        </checkButton>
+                     </ui>
+                     <font typeface="Myriad Pro"/>
+                     <margin leftInset="1.7639mm" rightInset="1mm" topInset="0mm" bottomInset="0mm"/>
+                     <para vAlign="middle"/>
+                     <caption placement="right" reserve="42.046mm">
+                        <para vAlign="middle"/>
+                        <value>
+                           <exData contentType="text/html">
+                              <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"/>
+                           </exData>
+                        </value>
+                     </caption>
+                     <items>
+                        <text xliff:rid="6B91E8D3-C035-4446-9FEA-A80ED4612AAC">true</text>
+                        <text/>
+                     </items>
+                     <event activity="initialize" name="event__initialize">
+                        <script contentType="application/x-javascript">//below is valid syntax, see http://en.wikipedia.org/wiki/ECMAScript_for_XML
+//remove this, it is non standard!!
+var oParty = this.resolveNode("Party");
+if(oParty != null &amp;&amp; oParty.rawValue != null){
+defaultText =  &lt;body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"&gt;
+		&lt;p id="CandidateName" style="text-decoration:none;letter-spacing:0in;font-weight:bold;"&gt;
+		 {this.resolveNode("Name").rawValue}
+		&lt;/p&gt;
+		&lt;p style="font-size:8pt;font-weight:normal;text-decoration:none;letter-spacing:0in"&gt;
+			{this.resolveNode("Party").rawValue == null ? "" : this.resolveNode("Party").rawValue}
+		&lt;/p&gt;
+		&lt;/body&gt;;
+		}
+		else
+		{
+		defaultText =  &lt;body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"&gt;
+		&lt;p id="CandidateName" style="text-decoration:none;letter-spacing:0in;font-weight:bold;"&gt;
+			  {this.resolveNode("Name").rawValue}
+		&lt;/p&gt;		
+		&lt;/body&gt;;
+		}
+
+this.caption.value.exData.loadXML(defaultText.toXMLString(), false, true);
+</script>
+                     </event>
+                     <bind match="dataRef" ref="$.Selected"/>
+                     <setProperty target="caption.value.#text" ref="Party"/>
+                     <setProperty target="caption.value.#text" ref="Party"/>
+                     <event activity="mouseDown" name="event__mouseDown">
+                        <script contentType="application/x-javascript">/**
+* Notes the most recently selected item
+* This is required becuase for overvote control
+* as if there are more votes than availible selections
+* then the most recent selection will be unselected
+* @reference SelectionManager script object
+*/ 
+SelectionManager.mostRecentlyCheckedSOM = this.resolveNode("Candidate").somExpression;
+</script>
+                     </event>
+                     <event activity="enter" name="event__enter">
+                        <script contentType="application/x-javascript">/**
+* Notes the most recently selected item
+* This is required becuase for overvote control
+* as if there are more votes than availible selections
+* then the most recent selection will be unselected
+* @reference SelectionManager script object
+*/ 
+SelectionManager.mostRecentlyCheckedSOM = this.resolveNode("Candidate").somExpression;
+
+</script>
+                     </event>
+                     <event activity="change" name="event__change">
+                        <script contentType="application/x-javascript">/**
+* Notes the most recently selected item
+* This is required becuase for overvote control
+* as if there are more votes than availible selections
+* then the most recent selection will be unselected
+* @reference SelectionManager script object
+*/ 
+SelectionManager.mostRecentlyCheckedSOM = this.resolveNode("Candidate").somExpression;
+
+</script>
+                     </event>
+                  </field>
+                  <field name="SelectionRaceCode" w="62mm" h="9mm" id="floatingField_caSelectionRaceCode" presence="hidden" access="readOnly">
+                     <ui>
+                        <textEdit>
+                           <border>
+                              <edge stroke="lowered"/>
+                           </border>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Myriad Pro"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle"/>
+                     <bind match="dataRef" ref="$.SelectionRaceCode"/>
+                     <calculate>
+                        <script contentType="application/x-javascript">this.resolveNode("RaceCode").rawValue;
+
+</script>
+                     </calculate>
+                  </field>
+                  <field name="SelectionCode" y="0mm" x="0mm" w="62mm" h="9mm" id="floatingField_caSelectionCode" presence="hidden" access="readOnly">
+                     <ui>
+                        <textEdit>
+                           <border>
+                              <edge stroke="lowered"/>
+                           </border>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Myriad Pro"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle"/>
+                     <bind match="dataRef" ref="$.SelectionCode"/>
+                     <calculate>
+                        <script contentType="application/x-javascript">this.resolveNode("Code").rawValue;
+
+</script>
+                     </calculate>
+                  </field>
+                  <bind match="dataRef" ref="$record.Selections.Selection[*]"/>
+                  <margin topInset="2.54mm" bottomInset="2.54mm"/>
+                  <overflow leader="" trailer=""/>
+                  <?templateDesigner expand 1?></subform>
+               <subform layout="tb">
+                  <bind match="dataRef" ref="$.Affiliation"/>
+                  <occur min="0"/>
+                  <field name="Party" presence="hidden" id="floatingField_caParty" access="readOnly" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.FormattedFloatingField)">
+                     <ui>
+                        <textEdit allowRichText="1"/>
+                     </ui>
+                     <bind match="dataRef" ref="$.AffiliationIdentifier.RegisteredName"/>
+                     <value>
+                        <exData contentType="text/html"/>
+                     </value>
+                  </field>
+                  <?templateDesigner expand 1?></subform>
+               <field name="Code" presence="hidden" id="floatingField_caCode" access="readOnly" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.FormattedFloatingField)">
+                  <ui>
+                     <textEdit allowRichText="1"/>
+                  </ui>
+                  <bind match="dataRef" ref="$.CandidateIdentifier.IdNumber"/>
+                  <desc>
+                     <text name="Schema Annotation">The name of an entity or person expressed as a simple text string without any structure embedding.</text>
+                  </desc>
+                  <value>
+                     <exData contentType="text/html"/>
+                  </value>
+               </field>
+               <field name="Name" presence="hidden" id="floatingField_caName" access="readOnly" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.FormattedFloatingField)">
+                  <ui>
+                     <textEdit allowRichText="1"/>
+                  </ui>
+                  <bind match="dataRef" ref="$.CandidateFullName.NameElement[*]"/>
+                  <desc>
+                     <text name="Schema Annotation">The name of an entity or person expressed as a simple text string without any structure embedding.</text>
+                  </desc>
+                  <value>
+                     <exData contentType="text/html"/>
+                  </value>
+               </field>
+               <bind match="dataRef" ref="$.Candidate.[Exists(CandidateIdentifier)]"/>
+               <margin leftInset="0mm" topInset="0mm" bottomInset="0mm"/>
+               <?templateDesigner expand 1?></subform>
+            <subform name="ReferendumOption" layout="tb">
+               <occur max="-1" min="0"/>
+               <subform w="52.451mm" minH="5.08mm" layout="tb" name="Selections">
+                  <field name="Selected" w="52.451mm">
+                     <ui>
+                        <checkButton shape="round">
+                           <border>
+                              <edge/>
+                              <fill/>
+                           </border>
+                        </checkButton>
+                     </ui>
+                     <font typeface="Myriad Pro"/>
+                     <margin leftInset="1.7639mm" rightInset="1mm"/>
+                     <para vAlign="middle"/>
+                     <caption placement="right" reserve="42.046mm">
+                        <para vAlign="middle"/>
+                        <value>
+                           <exData contentType="text/html">
+                              <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"/>
+                           </exData>
+                        </value>
+                     </caption>
+                     <items>
+                        <text xliff:rid="C2A89C4C-F41F-4A8F-935B-88AAA58C4961">true</text>
+                        <text/>
+                     </items>
+                     <event activity="initialize" name="event__initialize">
+                        <script contentType="application/x-javascript">//below is valid syntax, see http://en.wikipedia.org/wiki/ECMAScript_for_XML
+//remove this, it is non standard!!
+		defaultText =  &lt;body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"&gt;
+		&lt;p id="CandidateName" style="text-decoration:none;letter-spacing:0in;font-weight:bold;"&gt;
+			  {this.resolveNode("Name").rawValue}
+		&lt;/p&gt;		
+		&lt;/body&gt;;
+this.caption.value.exData.loadXML(defaultText.toXMLString(), false, true);
+</script>
+                     </event>
+                     <bind match="dataRef" ref="$.Selected"/>
+                     <setProperty target="caption.value.#text" ref="Party"/>
+                     <setProperty target="caption.value.#text" ref="Party"/>
+                     <event activity="mouseDown" name="event__mouseDown">
+                        <script contentType="application/x-javascript">/**
+* Notes the most recently selected item
+* This is required becuase for overvote control
+* as if there are more votes than availible selections
+* then the most recent selection will be unselected
+* @reference SelectionManager script object
+*/ 
+SelectionManager.mostRecentlyCheckedSOM = this.resolveNode("ReferendumOption").somExpression;
+</script>
+                     </event>
+                     <event activity="change" name="event__change">
+                        <script contentType="application/x-javascript">/**
+* Notes the most recently selected item
+* This is required becuase for overvote control
+* as if there are more votes than availible selections
+* then the most recent selection will be unselected
+* @reference SelectionManager script object
+*/ 
+SelectionManager.mostRecentlyCheckedSOM = this.resolveNode("ReferendumOption").somExpression;
+</script>
+                     </event>
+                     <event activity="enter" name="event__enter">
+                        <script contentType="application/x-javascript">/**
+* Notes the most recently selected item
+* This is required becuase for overvote control
+* as if there are more votes than availible selections
+* then the most recent selection will be unselected
+* @reference SelectionManager script object
+*/ 
+SelectionManager.mostRecentlyCheckedSOM = this.resolveNode("ReferendumOption").somExpression;
+</script>
+                     </event>
+                  </field>
+                  <field name="SelectionRaceCode" w="62mm" h="9mm" id="floatingField_roSelectionRaceCode" presence="hidden" access="readOnly">
+                     <ui>
+                        <textEdit>
+                           <border>
+                              <edge stroke="lowered"/>
+                           </border>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Myriad Pro"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle"/>
+                     <bind match="dataRef" ref="$.SelectionRaceCode"/>
+                     <calculate>
+                        <script contentType="application/x-javascript">this.resolveNode("RaceCode").rawValue;
+
+</script>
+                     </calculate>
+                  </field>
+                  <field name="SelectionCode" y="0mm" x="0mm" w="62mm" h="9mm" id="floatingField_roSelectionCode" presence="hidden" access="readOnly">
+                     <ui>
+                        <textEdit>
+                           <border>
+                              <edge stroke="lowered"/>
+                           </border>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Myriad Pro"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle"/>
+                     <bind match="dataRef" ref="$.SelectionCode"/>
+                     <calculate>
+                        <script contentType="application/x-javascript">this.resolveNode("Code").rawValue;
+
+</script>
+                     </calculate>
+                  </field>
+                  <bind match="dataRef" ref="$record.Selections.Selection[*]"/>
+                  <margin topInset="2.54mm" bottomInset="2.54mm"/>
+                  <overflow leader="" trailer=""/>
+                  <?templateDesigner expand 1?></subform>
+               <field name="Code" presence="hidden" id="floatingField_roCode" access="readOnly" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.FormattedFloatingField)">
+                  <ui>
+                     <textEdit allowRichText="1"/>
+                  </ui>
+                  <bind match="dataRef" ref="$.ProposalItem.ReferendumOptionIdentifier"/>
+                  <desc>
+                     <text name="Schema Annotation">The name of an entity or person expressed as a simple text string without any structure embedding.</text>
+                  </desc>
+                  <value>
+                     <exData contentType="text/html"/>
+                  </value>
+               </field>
+               <field name="Name" presence="hidden" id="floatingField_roName" access="readOnly" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.FormattedFloatingField)">
+                  <ui>
+                     <textEdit allowRichText="1"/>
+                  </ui>
+                  <bind match="dataRef" ref="$.ProposalItem.SelectionText"/>
+                  <desc>
+                     <text name="Schema Annotation">The name of an entity or person expressed as a simple text string without any structure embedding.</text>
+                  </desc>
+                  <value>
+                     <exData contentType="text/html"/>
+                  </value>
+               </field>
+               <bind match="dataRef" ref="$.Candidate.[Exists(ProposalItem)]"/>
+               <margin leftInset="0mm" topInset="0mm" bottomInset="0mm"/>
+               <?templateDesigner expand 1?></subform>
+            <bind match="dataRef" ref="$.BallotChoices"/>
+            <setProperty target="keep.intact" ref="KeepIntact.[Target == &quot;BallotChoices&quot;]"/>
+            <setProperty target="overflow.leader" ref="OverflowLeader.[Target == &quot;BallotChoices&quot;]"/>
+            <setProperty target="overflow.trailer" ref="OverflowTrailer.[Target == &quot;BallotChoices&quot;]"/>
+            <keep previous="contentArea"/>
+            <calculate>
+               <script contentType="application/x-javascript">/**
+* Prevents overvotes
+* @reference SelectionManager script object
+*/ 
+if(!(typeof allowOvervotes !== 'undefined' &amp;&amp; allowOvervotes.value === "yes")){
+	SelectionManager.makeExclusive(this);
+} 
+</script>
+            </calculate>
+            <event activity="initialize" name="event__initialize">
+               <script contentType="application/x-javascript">/**
+* Set the minimum and maximum selections for each contest.
+* This is needed for undervote / overvote control
+* @reference MaxSelections bound to the P1622 dataset
+* @reference SelectionManager script object
+*/ 
+var max = this.resolveNode("MaxSelections").rawValue;
+SelectionManager.setMinAndMax(this, 1 /* min */, max /* max */);
+</script>
+            </event>
+            <subform y="17.794mm" layout="tb" name="WriteIn">
+               <subform w="52.451mm" layout="tb" name="Selections">
+                  <subform>
+                     <bind match="none"/>
+                     <field name="WriteInName" w="42.926mm" h="5.999mm" x="9.525mm" y="0.016mm">
+                        <ui>
+                           <textEdit>
+                              <border>
+                                 <edge presence="hidden"/>
+                                 <edge presence="hidden"/>
+                                 <edge/>
+                                 <edge presence="hidden"/>
+                              </border>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font typeface="Myriad Pro"/>
+                        <margin topInset="1mm" bottomInset="1mm" leftInset="0mm" rightInset="1mm"/>
+                        <para vAlign="middle"/>
+                        <bind match="dataRef" ref="$.WriteInName"/>
+                        <assist>
+                           <toolTip xliff:rid="A3396A84-AE4B-49C8-9B9B-FFFA6B5352E8">Write-In Candidate Name</toolTip>
+                        </assist>
+                        <value>
+                           <text maxChars="255"/>
+                        </value>
+                        <event activity="change" name="event__change">
+                           <script contentType="application/x-javascript">// we want to automatically select the oval when the voter types in
+// the write-in area. Therefore we must set these values ourselves.
+this.resolveNode("Selected").rawValue = "true";
+SelectionManager.mostRecentlyCheckedSOM = this.resolveNode("WriteIn").somExpression;
+</script>
+                        </event>
+                     </field>
+                     <field name="Selected" h="6mm" w="5.334mm" y="0mm">
+                        <ui>
+                           <checkButton shape="round">
+                              <border>
+                                 <edge/>
+                                 <fill/>
+                              </border>
+                           </checkButton>
+                        </ui>
+                        <font typeface="Myriad Pro"/>
+                        <para vAlign="middle"/>
+                        <items>
+                           <text xliff:rid="A5B39FC4-C459-4FF6-BBAE-4FA0EC82F63E">true</text>
+                           <text/>
+                        </items>
+                        <margin leftInset="2.032mm" rightInset="0mm"/>
+                        <bind match="dataRef" ref="$.Selected"/>
+                        <assist>
+                           <toolTip xliff:rid="32540B91-095B-4C52-9F00-584E5FE04A53">Write-In</toolTip>
+                           <speak xliff:rid="EE32ECD1-CCB5-45AC-B32C-F1D01C392CA4">Write-In</speak>
+                        </assist>
+                        <event activity="mouseDown" name="event__mouseDown">
+                           <script contentType="application/x-javascript">/**
+* Notes the most recently selected item
+* This is required becuase for overvote control
+* as if there are more votes than availible selections
+* then the most recent selection will be unselected
+* @reference WriteIn to be attached
+* @reference SelectionManager script object
+*/ 
+SelectionManager.mostRecentlyCheckedSOM = this.resolveNode("WriteIn").somExpression;
+</script>
+                        </event>
+                        <event activity="change" name="event__change">
+                           <script contentType="application/x-javascript">/**
+* Notes the most recently selected item
+* This is required becuase for overvote control
+* as if there are more votes than availible selections
+* then the most recent selection will be unselected
+* @reference WriteIn to be attached
+* @reference SelectionManager script object
+*/ 
+SelectionManager.mostRecentlyCheckedSOM = this.resolveNode("WriteIn").somExpression;
+</script>
+                        </event>
+                        <event activity="enter" name="event__enter">
+                           <script contentType="application/x-javascript">/**
+* Notes the most recently selected item
+* This is required becuase for overvote control
+* as if there are more votes than availible selections
+* then the most recent selection will be unselected
+* @reference WriteIn to be attached
+* @reference SelectionManager script object
+*/ 
+SelectionManager.mostRecentlyCheckedSOM = this.resolveNode("WriteIn").somExpression;
+</script>
+                        </event>
+                     </field>
+                     <field name="SelectionRaceCode" w="62mm" h="9mm" id="floatingField_wiSelectionRaceCode" presence="hidden" access="readOnly">
+                        <ui>
+                           <textEdit>
+                              <border>
+                                 <edge stroke="lowered"/>
+                              </border>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font typeface="Myriad Pro"/>
+                        <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                        <para vAlign="middle"/>
+                        <bind match="dataRef" ref="$.SelectionRaceCode"/>
+                        <calculate>
+                           <script contentType="application/x-javascript">this.resolveNode("RaceCode").rawValue;
+
+</script>
+                        </calculate>
+                     </field>
+                     <field name="SelectionCode" y="0mm" x="0mm" w="62mm" h="9mm" id="floatingField_wiSelectionCode" presence="hidden" access="readOnly">
+                        <ui>
+                           <textEdit>
+                              <border>
+                                 <edge stroke="lowered"/>
+                              </border>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <font typeface="Myriad Pro"/>
+                        <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                        <para vAlign="middle"/>
+                        <bind match="dataRef" ref="$.SelectionCode"/>
+                        <calculate>
+                           <script contentType="application/x-javascript">this.resolveNode("Code").rawValue;
+
+</script>
+                        </calculate>
+                     </field>
+                     <margin topInset="2.54mm" bottomInset="2.54mm"/>
+                     <overflow leader="" trailer=""/>
+                     <?templateDesigner expand 1?></subform>
+                  <bind match="dataRef" ref="$record.Selections.Selection[*]"/>
+                  <?templateDesigner expand 1?></subform>
+               <field name="Code" presence="hidden" id="floatingField_wiCode" access="readOnly" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.FormattedFloatingField)">
+                  <ui>
+                     <textEdit allowRichText="1"/>
+                  </ui>
+                  <bind match="dataRef" ref="$.WriteInIdentifier.IdNumber"/>
+                  <desc>
+                     <text name="Schema Annotation">The name of an entity or person expressed as a simple text string without any structure embedding.</text>
+                  </desc>
+                  <value>
+                     <exData contentType="text/html"/>
+                  </value>
+               </field>
+               <bind match="dataRef" ref="$.WriteInCandidate[*]"/>
+               <occur max="-1" min="0"/>
+               <margin topInset="0mm" bottomInset="0mm"/>
+               <?templateDesigner expand 1?></subform>
+            <?templateDesigner expand 1?></subform>
+         <border>
+            <edge presence="hidden">
+               <color value="255,102,0"/>
+            </edge>
+            <corner thickness="0.176mm" presence="hidden">
+               <color value="255,102,0"/>
+            </corner>
+         </border>
+         <bind match="dataRef" ref="$.Contest.[VotingMethod == &quot;FPP&quot;]"/>
+         <breakBefore target="BallotLayout" targetType="pageArea"/>
+         <?templateDesigner isFragment yes?>
+         <?templateDesigner fragmentTitle Contest?>
+         <?templateDesigner fragmentDescription Rendering support for an n-of-m (FPP) contest.?>
+         <subform usehref=".\Overflow.xdp#som($template.#subform.Overflow)">
+            <?templateDesigner expand 1?></subform>
+         <overflow leader="" trailer=""/>
+         <?templateDesigner expand 1?></subform>
+      <proto>
+         <subform name="designer__stylesheet">
+            <draw name="DefaultTextStyle" w="58.039mm" minH="5.233mm">
+               <ui>
+                  <textEdit/>
+               </ui>
+               <font typeface="Myriad Pro"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.7056mm" rightInset="0.7056mm"/>
+               <border>
+                  <edge presence="hidden"/>
+               </border>
+            </draw>
+            <field name="FormattedFloatingField" w="62mm" h="9mm">
+               <ui>
+                  <textEdit>
+                     <border presence="hidden"/>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Myriad Pro" weight="bold"/>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para vAlign="middle"/>
+            </field>
+         </subform>
+      </proto>
+      <?templateDesigner expand 1?>
+      <?renderCache.subset "Courier Std" 0 0 ISO-8859-1 4 52 13 0023003200450046004A004F0050005400550056005A005C005EBQdeinostuy{}?>
+      <?renderCache.subset "Myriad Pro" 0 0 ISO-8859-1 4 72 18 000100240044004500460047004A004D004E004F00500051005300540055005600570059 Ccdefilmnoprstuvx?>
+      <?renderCache.subset "Myriad Pro" 1 0 ISO-8859-1 4 124 31 00010009000A0029002A002E002F0033003400360037004200440045004600470049004A004D004E004F00500051005300540055005600570059005C005E ()HIMNRSUVacdefhilmnoprstuvx{}?>
+   </subform>
+   <?templateDesigner Stylesheet ..\stylesheets\RbmStyleSheet.xfs?>
+   <?templateDesigner SaveTaggedPDF 1?>
+   <?templateDesigner SavePDFWithEmbeddedFonts 1?>
+   <?templateDesigner FormTargetVersion 33?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
+   <?templateDesigner Zoom 62?></template>
+<config xmlns="http://www.xfa.org/schema/xci/3.0/">
+   <agent name="designer">
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+      </pdf>
+   </agent>
+   <present>
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+         <version>1.7</version>
+         <adobeExtensionLevel>8</adobeExtensionLevel>
+      </pdf>
+      <xdp>
+         <packets>*</packets>
+      </xdp>
+   </present>
+</config>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.156067, 2014/03/04-12:38:26        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
+         <xmp:MetadataDate>2019-02-24T23:09:45Z</xmp:MetadataDate>
+         <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
+      </rdf:Description>
+      <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
+         <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
+      </rdf:Description>
+      <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
+         <xmpMM:DocumentID>uuid:20154875-15fc-49e6-8759-575f525f0398</xmpMM:DocumentID>
+      </rdf:Description>
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">Contest</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">Rendering support for an n-of-m (FPP) contest.</rdf:li>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.Contest</dc:identifier>
+                  <lcd:fragmentRole>Subform</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+<localeSet xmlns="http://www.xfa.org/schema/xfa-locale-set/2.7/">
+   <locale name="en_US" desc="English (United States)">
+      <calendarSymbols name="gregorian">
+         <monthNames>
+            <month>January</month>
+            <month>February</month>
+            <month>March</month>
+            <month>April</month>
+            <month>May</month>
+            <month>June</month>
+            <month>July</month>
+            <month>August</month>
+            <month>September</month>
+            <month>October</month>
+            <month>November</month>
+            <month>December</month>
+         </monthNames>
+         <monthNames abbr="1">
+            <month>Jan</month>
+            <month>Feb</month>
+            <month>Mar</month>
+            <month>Apr</month>
+            <month>May</month>
+            <month>Jun</month>
+            <month>Jul</month>
+            <month>Aug</month>
+            <month>Sep</month>
+            <month>Oct</month>
+            <month>Nov</month>
+            <month>Dec</month>
+         </monthNames>
+         <dayNames>
+            <day>Sunday</day>
+            <day>Monday</day>
+            <day>Tuesday</day>
+            <day>Wednesday</day>
+            <day>Thursday</day>
+            <day>Friday</day>
+            <day>Saturday</day>
+         </dayNames>
+         <dayNames abbr="1">
+            <day>Sun</day>
+            <day>Mon</day>
+            <day>Tue</day>
+            <day>Wed</day>
+            <day>Thu</day>
+            <day>Fri</day>
+            <day>Sat</day>
+         </dayNames>
+         <meridiemNames>
+            <meridiem>AM</meridiem>
+            <meridiem>PM</meridiem>
+         </meridiemNames>
+         <eraNames>
+            <era>BC</era>
+            <era>AD</era>
+         </eraNames>
+      </calendarSymbols>
+      <datePatterns>
+         <datePattern name="full">EEEE, MMMM D, YYYY</datePattern>
+         <datePattern name="long">MMMM D, YYYY</datePattern>
+         <datePattern name="med">MMM D, YYYY</datePattern>
+         <datePattern name="short">M/D/YY</datePattern>
+      </datePatterns>
+      <timePatterns>
+         <timePattern name="full">h:MM:SS A Z</timePattern>
+         <timePattern name="long">h:MM:SS A Z</timePattern>
+         <timePattern name="med">h:MM:SS A</timePattern>
+         <timePattern name="short">h:MM A</timePattern>
+      </timePatterns>
+      <dateTimeSymbols>GyMdkHmsSEDFwWahKzZ</dateTimeSymbols>
+      <numberPatterns>
+         <numberPattern name="numeric">z,zz9.zzz</numberPattern>
+         <numberPattern name="currency">$z,zz9.99|($z,zz9.99)</numberPattern>
+         <numberPattern name="percent">z,zz9%</numberPattern>
+      </numberPatterns>
+      <numberSymbols>
+         <numberSymbol name="decimal">.</numberSymbol>
+         <numberSymbol name="grouping">,</numberSymbol>
+         <numberSymbol name="percent">%</numberSymbol>
+         <numberSymbol name="minus">-</numberSymbol>
+         <numberSymbol name="zero">0</numberSymbol>
+      </numberSymbols>
+      <currencySymbols>
+         <currencySymbol name="symbol">$</currencySymbol>
+         <currencySymbol name="isoname">USD</currencySymbol>
+         <currencySymbol name="decimal">.</currencySymbol>
+      </currencySymbols>
+      <typefaces>
+         <typeface name="Myriad Pro"/>
+         <typeface name="Minion Pro"/>
+         <typeface name="Courier Std"/>
+         <typeface name="Adobe Pi Std"/>
+         <typeface name="Adobe Hebrew"/>
+         <typeface name="Adobe Arabic"/>
+         <typeface name="Adobe Thai"/>
+         <typeface name="Kozuka Gothic Pro-VI M"/>
+         <typeface name="Kozuka Mincho Pro-VI R"/>
+         <typeface name="Adobe Ming Std L"/>
+         <typeface name="Adobe Song Std L"/>
+         <typeface name="Adobe Myungjo Std M"/>
+      </typefaces>
+   </locale>
+</localeSet></xdp:xdp>

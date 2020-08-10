@@ -1,0 +1,832 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.1.20160728.2.925958" APIVersion="3.6.16210.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
+   <subform name="form1" locale="en_US" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea x="0.25in" y="0.25in" w="8in" h="10.5in"/>
+            <medium stock="letter" short="8.5in" long="11in"/>
+         </pageArea>
+      </pageSet>
+      <subform name="PlacedPDF" w="8.127in" h="12.014in">
+         <draw name="T0" w="3.118in" minH="0.179in">
+            <value>
+               <text>Form No. 12-A Prescribed by Secretary of State (06-14)</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="9.9pt" typeface="TimesNewRoman"/>
+            <traversal>
+               <traverse ref="T1[0]"/>
+            </traversal>
+         </draw>
+         <draw name="T1" x="57.912mm" y="9.754mm" w="3.527in" minH="0.285in">
+            <value>
+               <text>IDENTIFICATION ENVELOPE </text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font weight="bold" size="17.2pt" typeface="CGTimes"/>
+            <traversal>
+               <traverse ref="T2[0]"/>
+            </traversal>
+         </draw>
+         <draw name="T2" x="70.688mm" y="17.069mm" w="2.573in" minH="0.243in">
+            <value>
+               <text>STATEMENT OF VOTER  </text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font weight="bold" size="14.7pt" typeface="CGTimes"/>
+            <traversal>
+               <traverse ref="T3[0]"/>
+            </traversal>
+         </draw>
+         <draw name="T3" x="82.55mm" y="23.343mm" w="1.562in" minH="0.178in">
+            <value>
+               <text>R.C. 3509.04, 3511.05 </text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="11pt" typeface="CGTimes"/>
+            <traversal>
+               <traverse ref="T4[0]"/>
+            </traversal>
+         </draw>
+         <draw name="T4" y="40.107mm" w="8.002in" minH="0.268in">
+            <value>
+               <text>I, _________________________________________________, declare under penalty of election</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="14.7pt" typeface="TimesNewRoman"/>
+            <traversal>
+               <traverse ref="T5[0]"/>
+            </traversal>
+         </draw>
+         <draw name="T5" x="43.282mm" y="46.228mm" w="1.55in" minH="0.201in">
+            <value>
+               <text>(Printed Name of Voter)</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="11pt" typeface="TimesNewRoman"/>
+            <traversal>
+               <traverse ref="T6[0]"/>
+            </traversal>
+         </draw>
+         <draw name="T6" y="50.571mm" w="8.108in" minH="0.268in">
+            <value>
+               <text>falsification that the within ballot or ballots contained no voting marks of any kind when I </text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="14.7pt" typeface="TimesNewRoman"/>
+            <traversal>
+               <traverse ref="T7[0]"/>
+            </traversal>
+         </draw>
+         <draw name="T7" y="56.54mm" w="8.076in" minH="0.268in">
+            <value>
+               <text>received them, and that I caused the ballot or ballots to be marked, enclosed in the identification </text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="14.7pt" typeface="TimesNewRoman"/>
+            <traversal>
+               <traverse ref="T8[0]"/>
+            </traversal>
+         </draw>
+         <draw name="T8" y="62.509mm" w="3.145in" minH="0.268in">
+            <value>
+               <text>envelope, and sealed in the envelope. </text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="14.7pt" typeface="TimesNewRoman"/>
+            <traversal>
+               <traverse ref="T9[0]"/>
+            </traversal>
+         </draw>
+         <draw name="T9" y="74.447mm" w="3.286in" minH="0.268in">
+            <value>
+               <text>I am a qualified elector of the state and </text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="14.7pt" typeface="TimesNewRoman"/>
+            <traversal>
+               <traverse ref="T10[0]"/>
+            </traversal>
+         </draw>
+         <draw name="T10" x="82.245mm" y="74.447mm" w="1.783in" minH="0.272in">
+            <value>
+               <text>my voting residence</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font weight="bold" size="14.7pt" typeface="TimesNewRoman"/>
+            <traversal>
+               <traverse ref="T11[0]"/>
+            </traversal>
+         </draw>
+         <draw name="T11" x="127.584mm" y="74.447mm" w="0.913in" minH="0.268in">
+            <value>
+               <text>in Ohio is:</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="14.7pt" typeface="TimesNewRoman"/>
+            <traversal>
+               <traverse ref="T12[0]"/>
+            </traversal>
+         </draw>
+         <draw name="T12" y="85.928mm" w="6.602in" minH="0.246in">
+            <value>
+               <text>______________________________________________________________________</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="13.5pt" typeface="TimesNewRoman"/>
+            <traversal>
+               <traverse ref="T13[0]"/>
+            </traversal>
+         </draw>
+         <draw name="T13" x="46.711mm" y="91.465mm" w="1.969in" minH="0.201in">
+            <value>
+               <text>                        (Street Address)</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="11pt" typeface="TimesNewRoman"/>
+            <traversal>
+               <traverse ref="T14[0]"/>
+            </traversal>
+         </draw>
+         <draw name="T14" y="95.885mm" w="6.602in" minH="0.246in">
+            <value>
+               <text>______________________________________________________________________</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="13.5pt" typeface="TimesNewRoman"/>
+            <traversal>
+               <traverse ref="T15[0]"/>
+            </traversal>
+         </draw>
+         <draw name="T15" x="66.98mm" y="101.422mm" w="1.58in" minH="0.201in">
+            <value>
+               <text>(City or Village and Zip)</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="11pt" typeface="TimesNewRoman"/>
+            <traversal>
+               <traverse ref="T16[0]"/>
+            </traversal>
+         </draw>
+         <draw name="T16" y="115.062mm" w="3.114in" minH="0.272in">
+            <value>
+               <text>You must provide your birth date: </text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font weight="bold" size="14.7pt" typeface="TimesNewRoman"/>
+            <traversal>
+               <traverse ref="T17[0]"/>
+            </traversal>
+         </draw>
+         <draw name="T17" x="77.826mm" y="115.062mm" w="1.901in" minH="0.268in">
+            <value>
+               <text>______/______/_____</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="14.7pt" typeface="TimesNewRoman"/>
+            <traversal>
+               <traverse ref="T18[0]"/>
+            </traversal>
+         </draw>
+         <draw name="T18" x="127.432mm" y="115.062mm" w="2.345in" minH="0.272in">
+            <value>
+               <text>and ONE of the following:</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font weight="bold" size="14.7pt" typeface="TimesNewRoman"/>
+            <traversal>
+               <traverse ref="T19[0]"/>
+            </traversal>
+         </draw>
+         <draw name="T19" x="79.019mm" y="121.183mm" w="0.442in" minH="0.201in">
+            <value>
+               <text>month</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="11pt" typeface="TimesNewRoman"/>
+            <traversal>
+               <traverse ref="T20[0]"/>
+            </traversal>
+         </draw>
+         <draw name="T20" x="97.333mm" y="121.183mm" w="0.874in" minH="0.201in">
+            <value>
+               <text>day        year </text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="11pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="R21" x="0.492mm" y="132.246mm" w="12.648pt" h="12.648pt">
+            <value>
+               <rectangle>
+                  <edge thickness="0.882pt"/>
+               </rectangle>
+            </value>
+         </draw>
+         <draw name="T22" x="7.849mm" y="130.988mm" w="2.964in" minH="0.268in">
+            <value>
+               <text>Your Ohio driver’s license number:</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="14.7pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T23" x="140.106mm" y="130.988mm" minW="0.051in" minH="0.268in">
+            <value>
+               <text>,</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="14.7pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T24" x="142.697mm" y="130.988mm" w="0.242in" minH="0.272in">
+            <value>
+               <text>or</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font weight="bold" size="14.7pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="R25" x="81.947mm" y="136.76mm" w="164.864pt" h="0.735pt">
+            <value>
+               <rectangle>
+                  <edge presence="hidden"/>
+                  <fill>
+                     <color value="0,0,0"/>
+                  </fill>
+               </rectangle>
+            </value>
+         </draw>
+         <draw name="T26" x="66.218mm" y="137.897mm" w="3.047in" minH="0.201in">
+            <value>
+               <text>(begins with two letters followed by six numbers</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="11pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T27" x="142.316mm" y="137.033mm" minW="0.062in" minH="0.246in">
+            <value>
+               <text>)</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="13.5pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="R28" x="0.492mm" y="149.263mm" w="12.648pt" h="12.648pt">
+            <value>
+               <rectangle>
+                  <edge thickness="0.882pt"/>
+               </rectangle>
+            </value>
+         </draw>
+         <draw name="T29" x="7.849mm" y="147.904mm" w="4.267in" minH="0.268in">
+            <value>
+               <text>The last four digits of your Social Security number:</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="14.7pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T30" x="171.221mm" y="147.904mm" minW="0.051in" minH="0.268in">
+            <value>
+               <text>,</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="14.7pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T31" x="173.812mm" y="147.904mm" w="0.242in" minH="0.272in">
+            <value>
+               <text>or</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font weight="bold" size="14.7pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="R32" x="116.294mm" y="153.674mm" w="155.745pt" h="0.735pt">
+            <value>
+               <rectangle>
+                  <edge presence="hidden"/>
+                  <fill>
+                     <color value="0,0,0"/>
+                  </fill>
+               </rectangle>
+            </value>
+         </draw>
+         <draw name="R33" x="0.492mm" y="160.574mm" w="12.648pt" h="12.648pt">
+            <value>
+               <rectangle>
+                  <edge thickness="0.882pt"/>
+               </rectangle>
+            </value>
+         </draw>
+         <draw name="T34" x="7.595mm" y="159.334mm" w="5.826in" minH="0.268in">
+            <value>
+               <text>In lieu of providing either of the above numbers, I am enclosing a</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="14.7pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T35" x="156.489mm" y="159.334mm" w="0.626in" minH="0.272in">
+            <value>
+               <text>COPY</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font weight="bold" size="14.7pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T36" x="173.355mm" y="159.334mm" w="1.277in" minH="0.268in">
+            <value>
+               <text>of  one of the </text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="14.7pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T37" x="7.798mm" y="165.278mm" w="2.043in" minH="0.268in">
+            <value>
+               <text>following in the return</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="14.7pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T38" x="61.036mm" y="165.278mm" w="0.775in" minH="0.268in">
+            <value>
+               <text>(outside)</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="14.7pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T39" x="82.042mm" y="165.278mm" w="4.889in" minH="0.268in">
+            <value>
+               <text>envelope in which this identification envelope will be </text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="14.7pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T40" x="7.798mm" y="171.247mm" w="7.769in" minH="0.268in">
+            <value>
+               <text>mailed: a current and valid photo identification, a military identification, or a current (within </text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="14.7pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T41" x="7.798mm" y="177.216mm" w="6.903in" minH="0.268in">
+            <value>
+               <text>the last 12 months) utility bill, bank statement, government check, paycheck,</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="14.7pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T42" x="184.607mm" y="177.216mm" w="0.22in" minH="0.268in">
+            <value>
+               <text>or</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="14.7pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T43" x="191.668mm" y="177.216mm" w="0.522in" minH="0.268in">
+            <value>
+               <text>other </text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="14.7pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T44" x="7.798mm" y="183.185mm" w="4.206in" minH="0.268in">
+            <value>
+               <text>government document (other than a notice of </text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="14.7pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T45" x="113.436mm" y="183.185mm" w="3.661in" minH="0.268in">
+            <value>
+               <text>voter registration mailed by a board of </text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="14.7pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T46" x="7.798mm" y="189.154mm" w="4.259in" minH="0.268in">
+            <value>
+               <text>elections) that shows my name and current address.</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="14.7pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T47" y="201.27mm" w="8.071in" minH="0.25in">
+            <value>
+               <text>Election at which I am voting (check which election, and if a primary election, specify which ballot </text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font weight="bold" size="13.5pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T48" x="0.025mm" y="206.705mm" w="1.642in" minH="0.25in">
+            <value>
+               <text>you have returned):</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font weight="bold" size="13.5pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T49" x="11.684mm" y="217.703mm" w="1.399in" minH="0.225in">
+            <value>
+               <text>Check ONLY one:</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font weight="bold" size="12.2pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T50" x="11.684mm" y="222.529mm" w="0.19in" minH="0.25in">
+            <value>
+               <text>1.</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font weight="bold" size="13.5pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="R51" x="19.948mm" y="223.352mm" w="12.648pt" h="12.648pt">
+            <value>
+               <rectangle>
+                  <edge thickness="0.882pt"/>
+               </rectangle>
+            </value>
+         </draw>
+         <draw name="T52" x="27.305mm" y="222.529mm" w="1.428in" minH="0.25in">
+            <value>
+               <text>Primary Election</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font weight="bold" size="13.5pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T53" x="63.525mm" y="222.529mm" w="3.362in" minH="0.246in">
+            <value>
+               <text>(for primary elections, select type of ballot):</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="13.5pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="R54" x="23.839mm" y="234.299mm" w="12.648pt" h="12.648pt">
+            <value>
+               <rectangle>
+                  <edge thickness="0.882pt"/>
+               </rectangle>
+            </value>
+         </draw>
+         <draw name="T55" x="31.191mm" y="233.477mm" w="3.115in" minH="0.246in">
+            <value>
+               <text>Party ____________________________</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="13.5pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="R56" x="114.27mm" y="234.403mm" w="12.648pt" h="12.648pt">
+            <value>
+               <rectangle>
+                  <edge thickness="0.882pt"/>
+               </rectangle>
+            </value>
+         </draw>
+         <draw name="T57" x="121.615mm" y="233.477mm" w="2.18in" minH="0.246in">
+            <value>
+               <text>Nonpartisan or issues only   </text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="13.5pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T58" x="11.684mm" y="244.424mm" w="0.19in" minH="0.25in">
+            <value>
+               <text>2.</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font weight="bold" size="13.5pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="R59" x="20.466mm" y="245.246mm" w="12.648pt" h="12.648pt">
+            <value>
+               <rectangle>
+                  <edge thickness="0.882pt"/>
+               </rectangle>
+            </value>
+         </draw>
+         <draw name="T60" x="27.813mm" y="244.424mm" w="1.447in" minH="0.25in">
+            <value>
+               <text>General Election </text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font weight="bold" size="13.5pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T61" x="63.246mm" y="244.424mm" w="1.549in" minH="0.246in">
+            <value>
+               <text>______________    </text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="13.5pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T62" x="101.346mm" y="244.424mm" w="0.423in" minH="0.25in">
+            <value>
+               <text>     3.</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font weight="bold" size="13.5pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="R63" x="113.647mm" y="245.246mm" w="12.648pt" h="12.648pt">
+            <value>
+               <rectangle>
+                  <edge thickness="0.882pt"/>
+               </rectangle>
+            </value>
+         </draw>
+         <draw name="T64" x="121.006mm" y="244.424mm" w="1.373in" minH="0.25in">
+            <value>
+               <text>Special Election </text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font weight="bold" size="13.5pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T65" x="154.635mm" y="244.424mm" w="1.92in" minH="0.246in">
+            <value>
+               <text>____________________</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="13.5pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T66" x="73.99mm" y="249.961mm" w="4.802in" minH="0.201in">
+            <value>
+               <text>(year)                                                                                       (month and year)</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="11pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T67" y="260.35mm" w="8.115in" minH="0.272in">
+            <value>
+               <text>I hereby declare, under penalty of election falsification, that the statements above are </text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font weight="bold" size="14.7pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T68" y="266.294mm" w="5.063in" minH="0.272in">
+            <value>
+               <text>complete and true to the best of my knowledge and belief.</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font weight="bold" size="14.7pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T69" y="282.346mm" minW="0.172in" minH="0.318in">
+            <value>
+               <text>X</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font weight="bold" size="17.2pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T70" x="4.369mm" y="284.099mm" w="4.136in" minH="0.222in">
+            <value>
+               <text>________________________________________________</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="12.2pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T71" x="124.536mm" y="284.099mm" w="2.263in" minH="0.222in">
+            <value>
+               <text>__________________________</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font size="12.2pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T72" y="289.458mm" w="3.307in" minH="0.25in">
+            <value>
+               <text>                        SIGNATURE OF VOTER</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font weight="bold" size="13.5pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T73" x="143.358mm" y="289.458mm" w="1.014in" minH="0.25in">
+            <value>
+               <text>Date Signed</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font weight="bold" size="13.5pt" typeface="TimesNewRoman"/>
+         </draw>
+         <draw name="T74" x="6.807mm" y="299.973mm" w="7.48in" minH="0.204in">
+            <value>
+               <text>WHOEVER COMMITS ELECTION FALSIFICATION IS GUILTY OF A FELONY OF THE FIFTH DEGREE</text>
+            </value>
+            <ui>
+               <textEdit/>
+            </ui>
+            <para vAlign="middle"/>
+            <font weight="bold" size="11pt" typeface="TimesNewRoman"/>
+         </draw>
+         <bind match="none"/>
+         <?templateDesigner expand 0?>
+         <traversal>
+            <traverse operation="first" ref="T0[0]"/>
+         </traversal>
+         <?templateDesigner isFragment yes?>
+         <?templateDesigner fragmentTitle BoilerplateEnvelope?>
+         <?templateDesigner fragmentDescription Example of Boilerplate using an Ohio Absentee Envelope.?></subform>
+   </subform>
+</template>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.4-c005 78.150055, 2013/08/07-22:58:47        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">BoilerplateEnvelope</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">Example of Boilerplate using an Ohio Absentee Envelope.</rdf:li>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.PlacedPDF</dc:identifier>
+                  <lcd:fragmentRole>Subform</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta></xdp:xdp>

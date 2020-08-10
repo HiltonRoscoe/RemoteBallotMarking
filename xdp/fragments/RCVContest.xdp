@@ -1,0 +1,843 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.1.20160728.2.925958" APIVersion="3.6.16210.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2019-02-16T20:56:15Z" uuid="406b38c3-20a8-489f-ba76-6dac280b4256">
+<template xmlns:xliff="urn:oasis:names:tc:xliff:document:1.1" xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
+   <?formServer defaultPDFRenderFormat acrobat10.0static?>
+   <subform name="form1" locale="en_US" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea x="15.078mm" y="21.341mm" w="187.452mm" h="241.194mm" name="FullWidthCol"/>
+            <medium stock="letter" short="8.5in" long="11in"/>
+            <?templateDesigner expand 1?></pageArea>
+         <?templateDesigner expand 1?></pageSet>
+      <subform layout="tb" name="Contest">
+         <bind match="dataRef" ref="$.Contest.[VotingMethod == &quot;IRV&quot;]"/>
+         <breakBefore/>
+         <field name="RaceCode" w="62mm" h="9mm" id="floatingField020129_copy1" access="readOnly" presence="hidden">
+            <ui>
+               <textEdit/>
+            </ui>
+            <bind match="dataRef" ref="$.ContestIdentifier.IdNumber"/>
+         </field>
+         <field name="RaceName" access="readOnly" presence="hidden" id="floatingField003329" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.FormattedFloatingField)">
+            <ui>
+               <textEdit/>
+            </ui>
+            <bind match="dataRef" ref="$.ContestIdentifier.ContestName"/>
+            <value>
+               <exData contentType="text/html"/>
+            </value>
+         </field>
+         <field name="MaxSelections" presence="hidden" access="readOnly" id="floatingField009522" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.FormattedFloatingField)">
+            <ui>
+               <textEdit/>
+            </ui>
+            <value>
+               <exData contentType="text/html"/>
+            </value>
+            <calculate>
+               <script contentType="application/x-javascript">this.resolveNodes("BallotChoices.rcvTable.CandidateChoices.#subform[*]").length-1
+
+</script>
+            </calculate>
+         </field>
+         <field name="Instruction" presence="hidden" access="readOnly" id="floatingField001488" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.FormattedFloatingField)">
+            <ui>
+               <textEdit/>
+            </ui>
+            <bind match="dataRef" ref="$.HowToVote.Message"/>
+            <value>
+               <exData contentType="text/html"/>
+            </value>
+         </field>
+         <field name="UndervoteHelper" w="62mm" h="9mm" presence="hidden" access="readOnly" id="floatingField018807">
+            <ui>
+               <textEdit/>
+            </ui>
+            <bind match="none"/>
+         </field>
+         <subformSet relation="choice" name="ContestStyle">
+            <subform layout="tb" name="DefaultContest">
+               <draw name="Header" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.DefaultTextStyle)">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <exData contentType="text/html" xliff:rid="1B8243AA-E473-4D61-A375-15776DFC5CF5">
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+                            <p style="font-size:14pt;font-weight:bold;letter-spacing:0in">
+                              <span xfa:embedType="uri" xfa:embedMode="formatted" xfa:embed="#floatingField003329"/>
+                            </p>
+                            <p style="font-size:8pt;letter-spacing:0in">Rank up to<span style="xfa-spacerun:yes"> </span><span xfa:embedType="uri" xfa:embedMode="raw" xfa:embed="#floatingField009522"/> candidates</p>
+                            <p style="font-size:8pt;letter-spacing:0in">Mark no more than 1 oval in each column</p>
+                          </body>
+                     </exData>
+                  </value>
+               </draw>
+               <draw relevant="-print" name="Helper" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.DefaultTextStyle)" w="187.452mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <exData contentType="text/html">
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+                            <p style="letter-spacing:0in">
+                              <span xfa:embedType="uri" xfa:embedMode="raw" xfa:embed="#floatingField018807"/>
+                            </p>
+                          </body>
+                     </exData>
+                  </value>
+                  <font size="12pt" weight="bold" typeface="Myriad Pro" baselineShift="0pt"/>
+                  <para spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
+               </draw>
+               <border>
+                  <edge thickness="0.0175mm"/>
+                  <corner thickness="0.018mm"/>
+                  <fill>
+                     <color value="192,192,192"/>
+                  </fill>
+               </border>
+               <bind match="none"/>
+               <keep next="contentArea"/>
+               <overflow trailer=""/>
+               <?templateDesigner expand 0?></subform>
+            <subform name="InstructionsContest" layout="tb" id="InstructionsContest_ID_copy1">
+               <draw name="Header" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.DefaultTextStyle)" w="187.452mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <exData contentType="text/html">
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="font-size:14pt;font-weight:bold;text-decoration:none;letter-spacing:0in"><span style="xfa-spacerun:yes"> </span></p><p style="font-size:8pt;text-decoration:none;letter-spacing:0in"><span xfa:embedType="uri" xfa:embedMode="raw" xfa:embed="#floatingField001488"/><span style="xfa-spacerun:yes">  </span></p></body>
+                     </exData>
+                  </value>
+               </draw>
+               <border>
+                  <edge thickness="0.0175mm"/>
+                  <corner thickness="0.018mm"/>
+                  <fill>
+                     <color value="192,192,192"/>
+                  </fill>
+               </border>
+               <bind match="dataRef" ref="$.Contest[*].HowToVote.[Exists($) and not Exists(Messages)]"/>
+               <keep intact="contentArea" next="contentArea"/>
+               <?templateDesigner expand 1?></subform>
+            <?templateDesigner EditByExpression true?>
+            <?templateDesigner LastConnection Default Data Binding?>
+            <?templateDesigner expand 0?></subformSet>
+         <subform layout="tb" name="BallotChoices">
+            <bind match="dataRef" ref="$.BallotChoices"/>
+            <setProperty target="keep.intact" ref="$record.Election.Contest.[VotingMethod == &quot;IRV&quot;].Contest[*].BallotChoices.KeepIntact.[Target == &quot;BallotChoices&quot;]"/>
+            <keep previous="contentArea"/>
+            <subform columnWidths="48.6604mm 78.685pt 78.685pt 78.685pt 78.685pt 78.685pt" layout="table" name="rcvTable">
+               <subform layout="row" name="headerRow">
+                  <assist role="TH"/>
+                  <draw w="48.6604mm">
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <border>
+                        <corner presence="hidden"/>
+                        <edge/>
+                     </border>
+                     <para hAlign="center" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
+                     <font typeface="Myriad Pro" baselineShift="0pt"/>
+                  </draw>
+                  <border>
+                     <edge/>
+                     <corner thickness="0.176mm"/>
+                  </border>
+                  <occur max="-1"/>
+                  <subform layout="tb" name="rb1">
+                     <bind match="none"/>
+                     <draw w="78.685pt">
+                        <ui>
+                           <textEdit/>
+                        </ui>
+                        <border>
+                           <corner thickness="0.874pt"/>
+                           <edge/>
+                        </border>
+                        <value>
+                           <text xliff:rid="0DAAF03E-40F1-43AC-9C2B-219E84265F5A">1st</text>
+                        </value>
+                        <font typeface="Arial" kerningMode="pair" size="12.24pt" weight="bold"/>
+                        <para hAlign="center"/>
+                        <margin topInset="2.622pt" bottomInset="2.622pt" leftInset="4.371pt" rightInset="4.871pt"/>
+                     </draw>
+                     <para vAlign="middle" hAlign="center"/>
+                     <?templateDesigner expand 1?></subform>
+                  <subform layout="tb" name="rb2">
+                     <bind match="none"/>
+                     <draw w="78.685pt">
+                        <ui>
+                           <textEdit/>
+                        </ui>
+                        <border>
+                           <corner thickness="0.874pt"/>
+                           <edge/>
+                        </border>
+                        <value>
+                           <text xliff:rid="0404C8BA-BF54-482C-8053-6F33EE6F7AAE">2nd</text>
+                        </value>
+                        <font typeface="Arial" kerningMode="pair" size="12.24pt" weight="bold"/>
+                        <para hAlign="center"/>
+                        <margin topInset="2.622pt" bottomInset="2.622pt" leftInset="4.371pt" rightInset="4.871pt"/>
+                     </draw>
+                     <para vAlign="middle" hAlign="center"/>
+                     <?templateDesigner expand 1?></subform>
+                  <subform layout="tb" name="rb3">
+                     <bind match="none"/>
+                     <draw w="78.685pt">
+                        <ui>
+                           <textEdit/>
+                        </ui>
+                        <border>
+                           <corner thickness="0.874pt"/>
+                           <edge/>
+                        </border>
+                        <value>
+                           <text xliff:rid="FF2C43CF-E3D1-46F8-A325-90BBEE31FB5F">3rd</text>
+                        </value>
+                        <font typeface="Arial" kerningMode="pair" size="12.24pt" weight="bold"/>
+                        <para hAlign="center"/>
+                        <margin topInset="2.622pt" bottomInset="2.622pt" leftInset="4.371pt" rightInset="4.871pt"/>
+                     </draw>
+                     <para vAlign="middle" hAlign="center"/>
+                     <?templateDesigner expand 1?></subform>
+                  <subform layout="tb" name="rb4">
+                     <bind match="none"/>
+                     <draw w="78.685pt">
+                        <ui>
+                           <textEdit/>
+                        </ui>
+                        <border>
+                           <corner thickness="0.874pt"/>
+                           <edge/>
+                        </border>
+                        <value>
+                           <text xliff:rid="A9DA9F3E-AB6F-4FCF-B7CF-8CE4E86D5616">4th</text>
+                        </value>
+                        <font typeface="Arial" kerningMode="pair" size="12.24pt" weight="bold"/>
+                        <para hAlign="center"/>
+                        <margin topInset="2.622pt" bottomInset="2.622pt" leftInset="4.371pt" rightInset="4.871pt"/>
+                     </draw>
+                     <para vAlign="middle" hAlign="center"/>
+                     <?templateDesigner expand 1?></subform>
+                  <subform layout="tb" name="rb5">
+                     <bind match="none"/>
+                     <draw w="78.685pt">
+                        <ui>
+                           <textEdit/>
+                        </ui>
+                        <border>
+                           <corner thickness="0.874pt"/>
+                           <edge/>
+                        </border>
+                        <value>
+                           <text xliff:rid="AFA14D92-12F0-4D79-A361-AA01C8F5E247">5th</text>
+                        </value>
+                        <font typeface="Arial" kerningMode="pair" size="12.24pt" weight="bold"/>
+                        <para hAlign="center"/>
+                        <margin topInset="2.622pt" bottomInset="2.622pt" leftInset="4.371pt" rightInset="4.871pt"/>
+                     </draw>
+                     <para vAlign="middle" hAlign="center"/>
+                     <?templateDesigner expand 1?></subform>
+                  <traversal>
+                     <traverse operation="first" ref="#draw[0]"/>
+                  </traversal>
+                  <bind match="none"/>
+                  <event activity="ready" ref="$form" name="event__form_ready">
+                     <script contentType="application/x-javascript">switch(this.resolveNodes("CandidateChoices.#subform[*]").length-1){
+case 1:
+	rb2.presence = "invisible";
+case 2:
+	rb3.presence = "invisible";
+case 3:
+	rb4.presence = "invisible";
+case 4:
+	rb5.presence = "invisible";
+default:
+}
+
+</script>
+                  </event>
+                  <?templateDesigner expand 0?></subform>
+               <subformSet relation="choice" name="CandidateChoices">
+                  <subform layout="row" name="Candidate">
+                     <assist role="TR"/>
+                     <field name="Code" presence="hidden" id="floatingField011747_copy1" access="readOnly">
+                        <ui>
+                           <textEdit/>
+                        </ui>
+                        <bind match="dataRef" ref="$.CandidateIdentifier.IdNumber"/>
+                        <desc>
+                           <text name="Schema Annotation">The name of an entity or person expressed as a simple text string without any structure embedding.</text>
+                        </desc>
+                        <value>
+                           <exData contentType="text/html"/>
+                        </value>
+                     </field>
+                     <field name="Party" presence="hidden" id="floatingField011738_copy1" access="readOnly">
+                        <ui>
+                           <textEdit/>
+                        </ui>
+                        <bind match="dataRef" ref="$.Affiliation.AffiliationIdentifier.RegisteredName"/>
+                        <value>
+                           <exData contentType="text/html"/>
+                        </value>
+                     </field>
+                     <field name="Name" presence="hidden" access="readOnly" id="floatingField017982">
+                        <ui>
+                           <textEdit/>
+                        </ui>
+                        <bind match="dataRef" ref="$.CandidateFullName.NameElement[*]"/>
+                        <desc>
+                           <text name="Schema Annotation">The name of an entity or person expressed as a simple text string without any structure embedding.</text>
+                        </desc>
+                        <value>
+                           <exData contentType="text/html"/>
+                        </value>
+                     </field>
+                     <draw name="questionCell" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.DefaultTextStyle)">
+                        <ui>
+                           <textEdit/>
+                        </ui>
+                        <value>
+                           <exData contentType="text/html">
+                              <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+                                <p style="letter-spacing:0in">
+                                  <span xfa:embedType="uri" xfa:embedMode="raw" xfa:embed="#floatingField017982"/>
+                                </p>
+                              </body>
+                           </exData>
+                        </value>
+                     </draw>
+                     <border>
+                        <edge/>
+                        <corner thickness="0.176mm"/>
+                     </border>
+                     <?templateDesigner itemValuesSpecified 1?>
+                     <field name="rb1" x="0mm" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.TableCheckbox)">
+                        <ui>
+                           <checkButton/>
+                        </ui>
+                        <para hAlign="center" vAlign="middle"/>
+                        <items>
+                           <text xliff:rid="5B4FF74B-EA5C-45B7-98BF-618634F86583">1</text>
+                           <text/>
+                        </items>
+                        <bind match="dataRef" ref="$.Selected"/>
+                        <setProperty target="assist.toolTip" ref="$record.Election.Contest.[VotingMethod == &quot;IRV&quot;].Contest[*].BallotChoices.Candidate[*].Selected.CandidateFullName.NameElement[*]"/>
+                        <assist>
+                           <speak priority="toolTip"/>
+                        </assist>
+                     </field>
+                     <field name="rb2" y="0.162139in" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.TableCheckbox)">
+                        <ui>
+                           <checkButton/>
+                        </ui>
+                        <para hAlign="center" vAlign="middle"/>
+                        <items>
+                           <text xliff:rid="450A962F-09B8-409C-B9BA-D7E7077D9D53">2</text>
+                           <text/>
+                        </items>
+                        <bind match="dataRef" ref="$.Selected"/>
+                        <setProperty target="assist.toolTip" ref="$record.Election.Contest.[VotingMethod == &quot;IRV&quot;].Contest[*].BallotChoices.Candidate[*].Selected.CandidateFullName.NameElement[*]"/>
+                        <assist>
+                           <speak priority="toolTip"/>
+                        </assist>
+                     </field>
+                     <field name="rb3" y="0.162139in" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.TableCheckbox)">
+                        <ui>
+                           <checkButton/>
+                        </ui>
+                        <para hAlign="center" vAlign="middle"/>
+                        <items>
+                           <text xliff:rid="AFEC7EDC-EC8D-4FB9-896A-B9AFE153A16B">3</text>
+                           <text/>
+                        </items>
+                        <bind match="dataRef" ref="$.Selected"/>
+                        <setProperty target="assist.toolTip" ref="$record.Election.Contest.[VotingMethod == &quot;IRV&quot;].Contest[*].BallotChoices.Candidate[*].Selected.CandidateFullName.NameElement[*]"/>
+                        <assist>
+                           <speak priority="toolTip"/>
+                        </assist>
+                     </field>
+                     <field name="rb4" y="0.162139in" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.TableCheckbox)">
+                        <ui>
+                           <checkButton/>
+                        </ui>
+                        <para hAlign="center" vAlign="middle"/>
+                        <items>
+                           <text xliff:rid="3BDBB354-075E-4CA3-861A-E711A24B962B">4</text>
+                           <text/>
+                        </items>
+                        <bind match="dataRef" ref="$.Selected"/>
+                        <setProperty target="assist.toolTip" ref="$record.Election.Contest.[VotingMethod == &quot;IRV&quot;].Contest[*].BallotChoices.Candidate[*].Selected.CandidateFullName.NameElement[*]"/>
+                        <assist>
+                           <speak priority="toolTip"/>
+                        </assist>
+                     </field>
+                     <field name="rb5" y="0.162139in" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.TableCheckbox)">
+                        <ui>
+                           <checkButton/>
+                        </ui>
+                        <para hAlign="center" vAlign="middle"/>
+                        <items>
+                           <text xliff:rid="F12DE9CA-BDC5-42A7-A6E5-465F790CE48D">5</text>
+                           <text/>
+                        </items>
+                        <bind match="dataRef" ref="$.Selected"/>
+                        <setProperty target="assist.toolTip" ref="$record.Election.Contest.[VotingMethod == &quot;IRV&quot;].Contest[*].BallotChoices.Candidate[*].Selected.CandidateFullName.NameElement[*]"/>
+                        <assist>
+                           <speak priority="toolTip"/>
+                        </assist>
+                     </field>
+                     <event activity="ready" ref="$form" name="event__form_ready">
+                        <script contentType="application/x-javascript">switch(this.resolveNodes("CandidateChoices.#subform[*]").length-1){
+case 1:
+	rb2.presence = "invisible";
+case 2:
+	rb3.presence = "invisible";
+case 3:
+	rb4.presence = "invisible";
+case 4:
+	rb5.presence = "invisible";
+default:
+}
+</script>
+                     </event>
+                     <bind match="dataRef" ref="$.Candidate[*]"/>
+                     <calculate>
+                        <script contentType="application/x-javascript">// get changed object to use later
+if(SelectionManager.mostRecentlyCheckedSOM)
+	var fieldName = xfa.resolveNode(SelectionManager.mostRecentlyCheckedSOM).name;
+else // not sure why this is required, but XFA will stop firing event if something doesn't run during form load
+	var fieldName = "rb1";	
+// create a fake object so we can reuse existing overvote logic for N-of-M
+var obj = {
+"vMinSelected": {"value": 0},
+"vMaxSelected": {"value": 1},
+"nodes": this.resolveNodes("CandidateChoices.#subform[*]." + fieldName + "[*]"),
+"resolveNode": this.resolveNode("rcvTable").resolveNode
+};	
+if(!(typeof allowOvervotes !== 'undefined' &amp;&amp; allowOvervotes.value === "yes")){
+	SelectionManager.makeExclusive(obj);
+}
+</script>
+                     </calculate>
+                     <occur min="0" max="-1"/>
+                     <?templateDesigner expand 0?></subform>
+                  <occur min="0" max="-1"/>
+                  <?templateDesigner EditByExpression false?>
+                  <?templateDesigner LastConnection DataConnection?>
+                  <subform layout="row" name="WriteInCandidate">
+                     <assist role="TR"/>
+                     <subform layout="tb">
+                        <bind match="none"/>
+                        <draw name="Text6" x="0.016mm" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.DefaultTextStyle)">
+                           <ui>
+                              <textEdit/>
+                           </ui>
+                           <value>
+                              <text xliff:rid="986BD57A-0155-4507-9DA5-1D1613547C15">Write-In</text>
+                           </value>
+                        </draw>
+                        <field name="Name" minH="7.236mm" x="0.016mm" minW="41.315mm">
+                           <ui>
+                              <textEdit>
+                                 <border>
+                                    <edge presence="hidden"/>
+                                    <edge presence="hidden"/>
+                                    <edge/>
+                                    <edge presence="hidden"/>
+                                 </border>
+                                 <margin/>
+                              </textEdit>
+                           </ui>
+                           <font typeface="Myriad Pro" size="12pt"/>
+                           <margin topInset="1mm" bottomInset="1mm" leftInset="0mm" rightInset="1mm"/>
+                           <para vAlign="middle"/>
+                           <bind match="dataRef" ref="$.Name"/>
+                           <assist>
+                              <toolTip xliff:rid="C4EEB6F1-C1A9-4DC9-8337-4181D0C138FC">Write-In Candidate Name</toolTip>
+                           </assist>
+                           <value>
+                              <text maxChars="255"/>
+                           </value>
+                           <border>
+                              <edge presence="hidden"/>
+                              <corner thickness="0.874pt" presence="hidden"/>
+                           </border>
+                           <caption>
+                              <font typeface="Myriad Pro" size="12pt" baselineShift="0pt"/>
+                              <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
+                           </caption>
+                        </field>
+                        <para vAlign="middle" hAlign="center"/>
+                        <margin leftInset="5.243mm" rightInset="3.5278mm"/>
+                        <?templateDesigner expand 1?></subform>
+                     <field name="rb1" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.TableCheckbox)">
+                        <ui>
+                           <checkButton/>
+                        </ui>
+                        <para hAlign="center" vAlign="middle"/>
+                        <items>
+                           <text xliff:rid="F3E1422D-FFF1-46DF-8E01-82705BC5318E">1</text>
+                           <text/>
+                        </items>
+                        <bind match="dataRef" ref="$.Selected"/>
+                        <setProperty target="assist.toolTip" ref="$record.Election.Contest.[VotingMethod == &quot;IRV&quot;].Contest[*].BallotChoices.WriteInCandidate[*].Selected.CandidateFullName.NameElement[*]"/>
+                        <assist>
+                           <speak priority="toolTip"/>
+                        </assist>
+                     </field>
+                     <field name="rb2" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.TableCheckbox)">
+                        <ui>
+                           <checkButton/>
+                        </ui>
+                        <para hAlign="center" vAlign="middle"/>
+                        <items>
+                           <text xliff:rid="7CE2C035-185E-4525-BF0E-51F579C4EBC5">2</text>
+                           <text/>
+                        </items>
+                        <bind match="dataRef" ref="$.Selected"/>
+                        <setProperty target="assist.toolTip" ref="$record.Election.Contest.[VotingMethod == &quot;IRV&quot;].Contest[*].BallotChoices.WriteInCandidate[*].Selected.CandidateFullName.NameElement[*]"/>
+                        <assist>
+                           <speak priority="toolTip"/>
+                        </assist>
+                     </field>
+                     <field name="rb3" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.TableCheckbox)">
+                        <ui>
+                           <checkButton/>
+                        </ui>
+                        <para hAlign="center" vAlign="middle"/>
+                        <items>
+                           <text xliff:rid="D4A7AC68-1583-484A-BEAC-20C2203CD5CD">3</text>
+                           <text/>
+                        </items>
+                        <bind match="dataRef" ref="$.Selected"/>
+                        <setProperty target="assist.toolTip" ref="$record.Election.Contest.[VotingMethod == &quot;IRV&quot;].Contest[*].BallotChoices.WriteInCandidate[*].Selected.CandidateFullName.NameElement[*]"/>
+                        <assist>
+                           <speak priority="toolTip"/>
+                        </assist>
+                     </field>
+                     <field name="rb4" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.TableCheckbox)">
+                        <ui>
+                           <checkButton/>
+                        </ui>
+                        <para hAlign="center" vAlign="middle"/>
+                        <items>
+                           <text xliff:rid="8E05C7ED-3E43-4210-8E4F-EAA9FC7241EC">4</text>
+                           <text/>
+                        </items>
+                        <bind match="dataRef" ref="$.Selected"/>
+                        <setProperty target="assist.toolTip" ref="$record.Election.Contest.[VotingMethod == &quot;IRV&quot;].Contest[*].BallotChoices.WriteInCandidate[*].Selected.CandidateFullName.NameElement[*]"/>
+                        <assist>
+                           <speak priority="toolTip"/>
+                        </assist>
+                     </field>
+                     <field name="rb5" usehref="..\stylesheets\RbmStyleSheet.xfs#som($template.#subform.designer__stylesheet.TableCheckbox)">
+                        <ui>
+                           <checkButton/>
+                        </ui>
+                        <para hAlign="center" vAlign="middle"/>
+                        <items>
+                           <text xliff:rid="876A51A0-4C86-451A-9672-751A3115D765">5</text>
+                           <text/>
+                        </items>
+                        <bind match="dataRef" ref="$.Selected"/>
+                        <setProperty target="assist.toolTip" ref="$record.Election.Contest.[VotingMethod == &quot;IRV&quot;].Contest[*].BallotChoices.WriteInCandidate[*].Selected.CandidateFullName.NameElement[*]"/>
+                        <assist>
+                           <speak priority="toolTip"/>
+                        </assist>
+                     </field>
+                     <bind match="dataRef" ref="$.WriteInCandidate[*]"/>
+                     <event activity="ready" ref="$form" name="event__form_ready">
+                        <script contentType="application/x-javascript">// get all the items under CandidateChoices - the header row
+switch(this.resolveNodes("CandidateChoices.#subform[*]").length-1){
+case 1:
+	rb2.presence = "invisible";
+case 2:
+	rb3.presence = "invisible";
+case 3:
+	rb4.presence = "invisible";
+case 4:
+	rb5.presence = "invisible";
+default:
+}
+
+</script>
+                     </event>
+                     <occur min="0" max="-1"/>
+                     <?templateDesigner expand 1?></subform>
+                  <?templateDesigner expand 1?></subformSet>
+               <traversal>
+                  <traverse operation="first" ref="headerRow[0]"/>
+               </traversal>
+               <bind match="none"/>
+               <border>
+                  <edge/>
+                  <corner/>
+               </border>
+               <keep previous="contentArea"/>
+               <event activity="mouseDown" name="event__mouseDown" listen="refAndDescendents">
+                  <script contentType="application/x-javascript">
+/**
+* Notes the most recently selected item
+* This is required becuase for overvote control
+* as if there are more votes than availible selections
+* then the most recent selection will be unselected
+* @reference SelectionManager script object
+*/ 
+SelectionManager.mostRecentlyCheckedSOM = this.somExpression;
+// this IS the old value, after this event fires, it will have changed.
+if (xfa.event.target.className == "field") {
+SelectionManager.mostRecentlyCheckedSOM = xfa.event.target.somExpression;
+// this IS the old value, after this event fires, it will have changed.
+SelectionManager.previouslyCheckedValue = xfa.event.target.rawValue;
+}
+</script>
+               </event>
+               <event activity="enter" name="event__enter" listen="refAndDescendents">
+                  <script contentType="application/x-javascript">
+/**
+* Notes the most recently selected item
+* This is required becuase for overvote control
+* as if there are more votes than availible selections
+* then the most recent selection will be unselected
+* @reference SelectionManager script object
+*/ 
+SelectionManager.mostRecentlyCheckedSOM = this.somExpression;
+// this IS the old value, after this event fires, it will have changed.
+if (xfa.event.target.className == "field") {
+SelectionManager.mostRecentlyCheckedSOM = xfa.event.target.somExpression;
+// this IS the old value, after this event fires, it will have changed.
+SelectionManager.previouslyCheckedValue = xfa.event.target.rawValue;
+}
+</script>
+               </event>
+               <event activity="change" name="event__change" listen="refAndDescendents">
+                  <script contentType="application/x-javascript">
+/**
+* Notes the most recently selected item
+* This is required becuase for overvote control
+* as if there are more votes than availible selections
+* then the most recent selection will be unselected
+* @reference SelectionManager script object
+*/ 
+SelectionManager.mostRecentlyCheckedSOM = this.somExpression;
+// this IS the old value, after this event fires, it will have changed.
+if (xfa.event.target.className == "field") {
+SelectionManager.mostRecentlyCheckedSOM = xfa.event.target.somExpression;
+// this IS the old value, after this event fires, it will have changed.
+SelectionManager.previouslyCheckedValue = xfa.event.target.rawValue;
+}
+</script>
+               </event>
+               <?templateDesigner expand 1?></subform>
+            <traversal>
+               <traverse operation="first" ref="rcvTable[0]"/>
+            </traversal>
+            <?templateDesigner expand 1?></subform>
+         <?templateDesigner isFragment yes?>
+         <?templateDesigner fragmentTitle RCVContest?>
+         <?templateDesigner expand 1?></subform>
+      <proto>
+         <subform name="designer__stylesheet">
+            <draw name="DefaultTextStyle" w="58.039mm" minH="5.233mm">
+               <ui>
+                  <textEdit/>
+               </ui>
+               <font typeface="Myriad Pro"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.7056mm" rightInset="0.7056mm"/>
+               <border>
+                  <edge presence="hidden"/>
+               </border>
+            </draw>
+            <field name="FormattedFloatingField" w="62mm" h="9mm">
+               <ui>
+                  <textEdit>
+                     <border presence="hidden"/>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Myriad Pro" weight="bold"/>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para vAlign="middle"/>
+            </field>
+         </subform>
+      </proto>
+      <?templateDesigner expand 1?>
+      <?renderCache.subset "Adobe Pi Std" 0 0 UTF-16 2 4 0035?>
+      <?renderCache.subset "Arial" 1 0 ISO-8859-1 4 44 11 001400150016001700180047004B005100550056005712345dhnrst?>
+      <?renderCache.subset "Myriad Pro" 0 0 ISO-8859-1 4 116 29 0001000E0012002A002E002F00330034003800420044004500460049004A004C004D004E004F00500051005300540055005600570059005C005E -1IMNRSWacdehiklmnoprstuvx{}?>
+      <?renderCache.subset "Myriad Pro" 1 0 ISO-8859-1 4 76 19 00010029002F003300360042004400450046004D004E004F00500051005300550057005C005E HNRUacdelmnoprtv{}?>
+   </subform>
+   <?templateDesigner Stylesheet ..\stylesheets\RbmStyleSheet.xfs?>
+   <?templateDesigner SaveTaggedPDF 1?>
+   <?templateDesigner SavePDFWithEmbeddedFonts 1?>
+   <?templateDesigner FormTargetVersion 33?>
+   <?templateDesigner Zoom 68?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
+<config xmlns="http://www.xfa.org/schema/xci/3.0/">
+   <agent name="designer">
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+      </pdf>
+   </agent>
+   <present>
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+         <version>1.7</version>
+         <adobeExtensionLevel>8</adobeExtensionLevel>
+      </pdf>
+      <xdp>
+         <packets>*</packets>
+      </xdp>
+   </present>
+</config>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.156067, 2014/03/04-12:38:26        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
+         <xmp:MetadataDate>2019-02-16T20:56:15Z</xmp:MetadataDate>
+         <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
+      </rdf:Description>
+      <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
+         <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
+      </rdf:Description>
+      <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
+         <xmpMM:DocumentID>uuid:406b38c3-20a8-489f-ba76-6dac280b4256</xmpMM:DocumentID>
+      </rdf:Description>
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">RCVContest</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default"/>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.Contest</dc:identifier>
+                  <lcd:fragmentRole>Subform</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+<localeSet xmlns="http://www.xfa.org/schema/xfa-locale-set/2.7/">
+   <locale name="en_US" desc="English (United States)">
+      <calendarSymbols name="gregorian">
+         <monthNames>
+            <month>January</month>
+            <month>February</month>
+            <month>March</month>
+            <month>April</month>
+            <month>May</month>
+            <month>June</month>
+            <month>July</month>
+            <month>August</month>
+            <month>September</month>
+            <month>October</month>
+            <month>November</month>
+            <month>December</month>
+         </monthNames>
+         <monthNames abbr="1">
+            <month>Jan</month>
+            <month>Feb</month>
+            <month>Mar</month>
+            <month>Apr</month>
+            <month>May</month>
+            <month>Jun</month>
+            <month>Jul</month>
+            <month>Aug</month>
+            <month>Sep</month>
+            <month>Oct</month>
+            <month>Nov</month>
+            <month>Dec</month>
+         </monthNames>
+         <dayNames>
+            <day>Sunday</day>
+            <day>Monday</day>
+            <day>Tuesday</day>
+            <day>Wednesday</day>
+            <day>Thursday</day>
+            <day>Friday</day>
+            <day>Saturday</day>
+         </dayNames>
+         <dayNames abbr="1">
+            <day>Sun</day>
+            <day>Mon</day>
+            <day>Tue</day>
+            <day>Wed</day>
+            <day>Thu</day>
+            <day>Fri</day>
+            <day>Sat</day>
+         </dayNames>
+         <meridiemNames>
+            <meridiem>AM</meridiem>
+            <meridiem>PM</meridiem>
+         </meridiemNames>
+         <eraNames>
+            <era>BC</era>
+            <era>AD</era>
+         </eraNames>
+      </calendarSymbols>
+      <datePatterns>
+         <datePattern name="full">EEEE, MMMM D, YYYY</datePattern>
+         <datePattern name="long">MMMM D, YYYY</datePattern>
+         <datePattern name="med">MMM D, YYYY</datePattern>
+         <datePattern name="short">M/D/YY</datePattern>
+      </datePatterns>
+      <timePatterns>
+         <timePattern name="full">h:MM:SS A Z</timePattern>
+         <timePattern name="long">h:MM:SS A Z</timePattern>
+         <timePattern name="med">h:MM:SS A</timePattern>
+         <timePattern name="short">h:MM A</timePattern>
+      </timePatterns>
+      <dateTimeSymbols>GyMdkHmsSEDFwWahKzZ</dateTimeSymbols>
+      <numberPatterns>
+         <numberPattern name="numeric">z,zz9.zzz</numberPattern>
+         <numberPattern name="currency">$z,zz9.99|($z,zz9.99)</numberPattern>
+         <numberPattern name="percent">z,zz9%</numberPattern>
+      </numberPatterns>
+      <numberSymbols>
+         <numberSymbol name="decimal">.</numberSymbol>
+         <numberSymbol name="grouping">,</numberSymbol>
+         <numberSymbol name="percent">%</numberSymbol>
+         <numberSymbol name="minus">-</numberSymbol>
+         <numberSymbol name="zero">0</numberSymbol>
+      </numberSymbols>
+      <currencySymbols>
+         <currencySymbol name="symbol">$</currencySymbol>
+         <currencySymbol name="isoname">USD</currencySymbol>
+         <currencySymbol name="decimal">.</currencySymbol>
+      </currencySymbols>
+      <typefaces>
+         <typeface name="Myriad Pro"/>
+         <typeface name="Minion Pro"/>
+         <typeface name="Courier Std"/>
+         <typeface name="Adobe Pi Std"/>
+         <typeface name="Adobe Hebrew"/>
+         <typeface name="Adobe Arabic"/>
+         <typeface name="Adobe Thai"/>
+         <typeface name="Kozuka Gothic Pro-VI M"/>
+         <typeface name="Kozuka Mincho Pro-VI R"/>
+         <typeface name="Adobe Ming Std L"/>
+         <typeface name="Adobe Song Std L"/>
+         <typeface name="Adobe Myungjo Std M"/>
+      </typefaces>
+   </locale>
+</localeSet></xdp:xdp>
